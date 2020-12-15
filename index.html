@@ -364,12 +364,12 @@
         
         <h2 class="heading">Get in Touch</h2>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <div class = "frame">
+        
+       <div class = "frame">
         <div id = "button_open_envelope" class="btn-rounded-white">
                 Email me
             </div>
             <div class = "message">
-                <br>
                  <div id="contact-form">
                     <form method="POST" action="https://formspree.io/f/meqprlqy">
                         <input type="hidden" name="_subject" value="Contact request from personal website" />
@@ -378,17 +378,17 @@
                         <button type="submit">Send</button>
                     </form>
                 </div> 
-            </div>
-            <div class = "bottom"></div>            
+            </div>  
+            <div class = "bottom"></div>           
             <div class = "left"></div>
             <div class = "right"></div>
             <div class = "top"></div>
             <script>
                     $(document).ready(function(){
-                    $('.frame').click(function(){
-                    $('.top').addClass('open');
-                    $('.message').addClass('pull');
-                    })
+                        $('.frame').click(function(){
+                        $('.top').addClass('open');
+                        $('.message').addClass('pull');
+                        })
                     });
             </script>
         </div>

@@ -229,9 +229,7 @@ footer {
 }
 
 .background-alt-contact{
-    background: #f2f2f5; 
-display: inline-block;
-  position: relative;
+  background: #f2f2f5; 
 }
 /*
     --------------------------
@@ -669,13 +667,21 @@ display: inline-block;
   transition-delay:1.5s;
   z-index: 300;
 }
-.left,.right,.top{width: 0; height: 0;position:absolute;top:0;z-index: 310;}
+.left,.right,.top{
+  width: 0; height: 0;
+  position:absolute;
+  top:0;
+  z-index: 310;
+}
 .left{  
+  display: block;
   border-left: 300px solid #337efc;
   border-top: 160px solid transparent;
-  border-bottom: 160px solid transparent;
+  border-bottom: 160px solid transparent;;
 }
+
 .right{ 
+  display: block;
   border-right: 300px solid #337efc;
   border-top: 160px solid transparent;
   border-bottom: 160px solid transparent;;
@@ -897,11 +903,4 @@ display: inline-block;
   #lead-content a {
     font-size: 0.9em;
     padding: 5px 10px; } }
-
-.wrapper{
-  max-width : 900px;
-  width : 100%;
-  display :block;
-  margin : 0 auto;
-}
 /*# sourceMappingURL=styles.css.map */
