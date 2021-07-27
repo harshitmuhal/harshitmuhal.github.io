@@ -223,7 +223,18 @@ footer {
     right: 0;
     margin: 0 auto;
     background: #1B5330; }
-
+    
+    .eduhead:after {
+      position: absolute;
+      content: '';
+      top: 100%;
+      height: 1px;
+      width: 50px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background: #1B5330;
+    }
 .background-alt {
   background: #f2f2f5; 
 }
@@ -457,40 +468,136 @@ footer {
     ----- 7. Education Styles -----
     -------------------------------
 */
-#education {
-  padding: 50px 15px 20px 15px;
-  border-bottom: 1px solid #dcd9d9;
-  text-align: center; }
-  #education h2 {
-    color: #374054;
-    margin-bottom: 50px; }
 
-.education-block {
-  max-width: 700px;
-  margin: 0 auto 30px auto;
-  padding: 15px;
-  border: 1px solid #dcd9d9;
-  text-align: left; }
-  .education-block h3 {
-    font-weight: 500;
-    float: left;
-    margin: 0;
-    color: #374054; }
-  .education-block span {
-    color: #74808a;
-    float: right; }
-  .education-block h4 {
-    color: #74808a;
-    clear: both;
-    font-weight: 500;
-    margin: 0 0 15px 0; }
-  .education-block p, .education-block ul {
-    margin: 0;
-    color: #74808a;
-    font-size: 0.9em; }
-  .education-block ul {
-    padding: 0 0 0 15px; }
-
+    .educard img{
+      height: 200px;
+      width: 100%;
+    }
+    
+    /* Add some padding inside the card container */
+    .educontainer {
+      padding: 2px 16px;
+    }
+    
+    .educationtim {
+      font-family: "Open Sans", sans-serif;
+      color: #525f7f;
+    }
+    
+    /* .educationtim *{
+      font-size: 14px;
+    } */
+    
+    .edutimeline {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      width: 75vw;
+      margin: 5% auto;
+    }
+    
+    .edutimeline__event {
+      background: #fff;
+      margin-bottom: 20px;
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin: 20px 0;
+      border-radius: 8px;
+      -webkit-box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+              box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    }
+    
+    .edutimeline__event:hover {
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+    }
+    .edutimeline__event__title {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #9251ac;
+      letter-spacing: 1.5px;
+    }
+    
+    .edutimeline__event__content {
+      padding: 20px;
+    }
+    
+    .edutimeline__event__date {
+      color: #f6a4ec;
+      font-size: 1.5rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    
+    .edutimeline__event__icon {
+      border-radius: 8px 0 0 8px;
+      background: #9251ac;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -ms-flex-preferred-size: 40%;
+          flex-basis: 40%;
+      font-size: 2rem;
+      color: #9251ac;
+      padding: 20px;
+    }
+    
+    .edutimeline__event__description {
+      -ms-flex-preferred-size: 60%;
+          flex-basis: 60%;
+    }
+    
+    .edutimeline__event--type2 .edutimeline__event__date {
+      color: #87bbfe;
+    }
+    
+    .edutimeline__event--type2 .edutimeline__event__icon {
+      background: #555ac0;
+      color: #555ac0;
+    }
+    
+    .edutimeline__event--type2 .edutimeline__event__title {
+      color: #555ac0;
+    }
+    
+    .edutimeline__event--type3 .edutimeline__event__date {
+      color: #aff1b6;
+    }
+    
+    .edutimeline__event--type3 .edutimeline__event__icon {
+      background: #24b47e;
+      color: #24b47e;
+    }
+    
+    .edutimeline__event--type3 .edutimeline__event__title {
+      color: #24b47e;
+    }
+    
+    @media (max-width: 786px) {
+      .edutimeline__event {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+      }
+      .edutimeline__event__icon {
+        border-radius: 4px 4px 0 0;
+      }
+    }
+    
 /*
     -------------------------------
     ----- 8. Project Styles -----
