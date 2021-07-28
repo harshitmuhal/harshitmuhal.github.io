@@ -387,6 +387,7 @@ footer {
   #experience h2 {
     color: #374054; }
 
+
 #experience-timeline .card{
   padding: 20px;
   -moz-box-sizing: border-box; 
@@ -394,11 +395,13 @@ footer {
   overflow: hidden;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
   background:rgba(0, 0, 0, 0.07);
+  
 }
 
 #experience-timeline .card .snakeborder {
   transition:0.5;
 }
+
 #experience-timeline .card .snakeborder:nth-child(1) {
   position: absolute;
   top: 0;
@@ -688,47 +691,12 @@ footer {
     ----- 8. Project Styles -----
     -------------------------------
 */
+
 #projects {
-  padding: 50px 15px;
+  padding: 50px 0px 85px 0px;
   border-bottom: 1px solid #dcd9d9;
-  text-align: center; }
-  #projects h2 {
-    color: #374054;
-    margin-bottom: 50px; }
-
-.project {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto 30px auto;
-  overflow: hidden;
-  background: #fff;
-  border-radius: 4px; }
-
-.project-image {
-  float: left;
-  width: 30%; }
-
-.project-info {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: 300px;
-  padding: 15px;
-  width: 70%; }
-  .project-info h3 {
-    font-size: 1.5em;
-    font-weight: 300;
-    color: #374054;
-    margin: 0 0 15px 0; }
-  .project-info p {
-    color: #74808a;
-    margin: 0 0 15px 0;
-    font-size: 0.9em; }
-  .project-info a {
-    text-decoration: None; }
-
-#more-projects {
-  display: none; }
+  text-align: center; 
+}
 
 /*
     -------------------------------
@@ -737,7 +705,8 @@ footer {
 */
 .skills {
   padding: 20px 10px;
-  text-align: center; }
+  text-align: center; 
+}
   .skills h2 {
     color: #374054;
     margin-bottom: 20px; }
@@ -754,7 +723,9 @@ footer {
     background: #e4e4ea;
     list-style: none;
     cursor: default;
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5); 
+  }
 
 /*
     -------------------------------

@@ -1,0 +1,117 @@
+    .project-image img{
+    float: left;
+    height: 200px;
+    width: 200px;
+    }
+
+    .project-info {
+    position: relative;
+    padding: 15px;
+    align-items: center;
+    }
+
+    .project-info p {
+    margin: 0 0 15px 0;
+    font-size: 0.9em; 
+    }
+
+    .project-info a {
+        text-align: center;
+        background-color: #0275d8;;
+        color: white;
+        padding: 0.4em;
+        font-size: 0.8em;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-decoration: None; 
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    }
+
+    .project-info a:hover {
+    text-align: center;
+    background-color: #115794;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: None; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
+    }
+
+    .project-title{
+        border-radius: 13px;
+        /* height: 100%; */
+        /* width: 100%; */
+        font-size: 1.5em;
+        font-weight: 300;
+        margin: 0 0 15px 0; 
+        padding: 5px 5px;
+        text-align: center;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+    }
+
+    /* CONTAINER */
+
+    .cardSlider .wrapper {
+    position: relative;
+    }
+
+    .cards_container {
+    box-sizing: border-box;
+    width: 70%;
+    max-width : 550px;
+    /* height: 300px; */
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 8px 16px 0 rgba(117, 91, 91, 0.8);
+    }
+
+    .cards_container .item {
+    /* height: 300px; */
+    display:none;
+    }
+
+    .cards_container .item.active {
+    display: block;
+    padding: 20px;
+    }
+
+    /* BTNS */
+
+    .action_btns {
+    position: absolute;
+    top: 95px;
+    width: 100%;
+    }
+
+    .action_btns .btn {
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    font-size: 50px;
+    color: #0275d8;
+    }
+
+    .action_btns .btn.btn_prev {
+    float: left;
+    margin-right: 25px;
+    }
+
+    .action_btns .btn.btn_next {
+    float: right;
+    }
+
+    /* COUNTER */
+
+    .count_slide {
+    width: 149px;
+    background: #0275d8;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    margin-top: 5px;
+    float: right;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+    }
+
+    .count_slide span{
+    font-weight: bold;
+    }

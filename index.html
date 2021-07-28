@@ -169,7 +169,7 @@
                 <div class="edutimeline__event__icon ">
                 <!-- <i class="lni-cake"></i> -->
                 <div class="edutimeline__event__date educard">
-                    <img src="dtu.jpg" alt="Avatar">
+                    <img src="static/images/dtu.jpg" alt="Avatar">
                     <div class="container">
                         <h4 style="text-align: center;"><b>Aug 2018 - May 2022</b></h4> 
                     </div>
@@ -206,7 +206,7 @@
                 <!-- <i class="lni-burger"></i> -->
                 <div class="edutimeline__event__date educard">
 
-                    <img src="dav.jpg" alt="Avatar">
+                    <img src="static/images/dav.jpg" alt="Avatar">
                     <div class="container">
                         <h4 style="text-align: center;"><b>2011-2018</b></h4> 
                     </div>
@@ -241,162 +241,117 @@
     </div>
     <!-- End #education -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/project.css">
+        <script src="js/projects.js"></script>
+
     <div id="projects" class="background-alt">
         <h2 class="heading">Projects</h2>
         <div class="container">
-            <div class="row">
-                 <div class="col project shadow-large">
-                    <div class="project-image">
-                        <img src="static/images/ic.png" height="300px" width="300px"/>
+            <div class="cardSlider">
+                <div class="wrapper">
+                    <div class="action_btns">
+                        <div class="btn btn_prev fa fa-arrow-circle-left"></div>
+                        <div class="btn btn_next fa fa-arrow-circle-right"></div>
                     </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Image Captioning</h3> <hr>
-                        <p> &#10004;Generates an appropriate caption for any real-world<br> image using Machine Learning/Deep Learning. 
+                    <div class="cards_container">
+                        <div class="item active" data-id="1">
+                        <div class="row">
+                            <div class="project-info">
+                                <div class="project-title">
+                                    <h3>Image Captioning</h3>
+                                </div> 
+                                <hr>
+                        <p> &#10004; Generates an appropriate caption for any real-world image using Machine Learning/ Deep Learning. 
                         </p>
-                        <a target="_blank" href="https://github.com/harshitmuhal/Image-Captioning"><img src="static/images/github.png" height="20px" width="20px">View on github</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-            </div>
-
-            <div class="row">
-                 <div class="col project shadow-large">
-                    <div class="project-image">
-                        <img src="static/images/sentiment.png" height="300px" width="300px"/>
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>IMDB review Sentiment Analysis</h3> <hr>
-                        <p> &#10004;Implemented a Deep CNN-LSTM with combined kernels from multiple<br> branches for IMDb review sentiment analysis.
-                        </p>
-                        <a target="_blank" href="https://github.com/harshitmuhal/IMDb-review-sentiment-analysis"><img src="static/images/github.png" height="20px" width="20px">View on github</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-            </div>
-
-            <div class="row">
-                 <div class="col project shadow-large">
-                    <div class="project-image">
-                        <img src="static/images/gan.png" height="300px" width="300px"/>
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Handwritten-digit-image-Generation</h3> <hr>
-                        <p> &#10004; Used MNIST dataset for training a DCGAN<br> to generate more handwritten digit images.<br>
-                            &#10004; Model was trained on google colab.
-                        </p>
-                        <a target="_blank" href="https://github.com/harshitmuhal/Handwritten-digit-image-Generation-using-DCGAN"><img src="static/images/github.png" height="20px" width="20px">View on github</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-            </div>
-
-            <div class="row">
-                 <div class="col project shadow-large">
-                    <div class="project-image">
-                        <img src="static/images/emoji.png" height="300px" width="300px"/>
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Emoji Prediction</h3> <hr>
-                        <p> &#10004; Implementation of a basic emoji predictor<br> using stacked LSTM on a small dataset.<br>
-                        </p>
-                        <a target="_blank" href="https://github.com/harshitmuhal/Emoji-Predictor"><img src="static/images/github.png" height="20px" width="20px">View on github</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-            </div>
-
-            <a target="_blank" id="view-more-projects" href="#">View More Projects</a>
-
-                <div id="more-projects" class="row">
-                    
-                    <div class="project shadow-large">
-                        <div class="project-image">
-                            <img src="static/images/tetris.png"  height="300px" width="300px"/>
+                        <a target="_blank" href="https://github.com/harshitmuhal/Image-Captioning"><img src="static/images/githubwhite.png" height="20px" width="20px"> View on github</a>
                         </div>
-                        <!-- End .project-image -->
-                        <div class="project-info">
-                            <h3>Tetris</h3> <hr>
-                            <p>
-                               &#10004;Implemented an interactive <b>tetris game</b> <br>using Python programming language and pygame library.<br>
-                               &#10004;Game has different levels.<br>
-                               <br>
-                            <a target="_blank" href="https://github.com/harshitmuhal/Tetris-Computer-Graphics-Project"><img src="static/images/github.png" height="20px" width="20px">
-                            View on github</a>
                         </div>
-                        <!-- End .project-info -->
-                    </div>
-                    <!-- End .project -->
+                        </div>
 
-                    <div class="project shadow-large">
-                        <div class="project-image">
-                            <img src="static/images/dominance.png"  height="300px" width="300px"/>
-                        </div>
-                        <!-- End .project-image -->
-                        <div class="project-info">
-                            <h3>Dominant Color Extraction using KMeans</h3> <hr>
-                            <p>
-                               &#10004;Used KMeans algorithm to find the most dominant<br>
-                                colors of a given image and created a new image with<br> these dominant colors.<br><br>
-                               <br>
-                            <a target="_blank" href="https://github.com/harshitmuhal/Dominant-Color-Extraction-using-KMeans"><img src="static/images/github.png" height="20px" width="20px">
-                            View on github</a>
-                        </div>
-                        <!-- End .project-info -->
-                    </div>
-                    <!-- End .project -->
+                        <div class="item" data-id="2">
+                            <div class="row">
+                                <div class="project-info">
+                                    <div class="project-title">
+                                        <h3>IMDB review Sentiment Analysis</h3>
+                                    </div> 
+                                    <hr>
+                                    <p> &#10004; Implemented a Deep CNN-LSTM with combined kernels from multiple branches for IMDb review sentiment analysis.
+                                    </p>
+                                    <a target="_blank" href="https://github.com/harshitmuhal/IMDb-review-sentiment-analysis"><img src="static/images/githubwhite.png" height="20px" width="20px"> View on github</a>
+                                </div>
+                            </div>
+                            </div>
 
-                    <div class="project shadow-large">
-                        <div class="project-image">
-                            <img src="static/images/music.png"  height="300px" width="300px"/>
-                        </div>
-                        <!-- End .project-image -->
-                        <div class="project-info">
-                            <h3>Nightingale: The Music Player</h3> <hr>
-                            <p>
-                                &#10004;capable of playing/stopping/pausing/muting/rewinding the music.<br>
-                                &#10004;volume of music can be easily changed using slider.<br>
-                                &#10004; list of favourite songs can be created as playlists.<br>
-                                &#10004; capable of showing total length of the music being played.<br>
-                                &#10004; capable of showing remaining time of the music.<br>
-                               and much more features<br><br>
-                            <a target="_blank" href="https://github.com/harshitmuhal/Nightingale-The-Music-Player"><img src="static/images/github.png" height="20px" width="20px">
-                            View on github</a>
-                        </div>
-                        <!-- End .project-info -->
-                    </div>
-                    <!-- End .project -->
+                            <div class="item" data-id="3">
+                                <div class="row">
+                                    <div class="project-info">
+                                        <div class="project-title">
+                                            <h3>Handwritten Digit Image Generation</h3>
+                                        </div> 
+                                        <hr>
+                                        <p> &#10004; Used MNIST dataset for training a DCGAN to generate more handwritten digit images.<br>
+                                            &#10004; Model was trained on google colab.
+                                        </p>                                    
+                                <a target="_blank" href="https://github.com/harshitmuhal/Handwritten-digit-image-Generation-using-DCGAN"><img src="static/images/githubwhite.png" height="20px" width="20px"> View on github</a>
+                                </div>
+                                </div>
+                                </div>
+                            
+                                <div class="item" data-id="4">
+                                    <div class="row">
+                                        <div class="project-info">
+                                            <div class="project-title">
+                                                <h3>Nightingale: The Music Player</h3>
+                                            </div> 
+                                            <hr>
+                                    <p> &#10004; capable of playing/stopping /pausing /muting /rewinding the music.<br>
+                                        &#10004; volume of music can be easily changed using slider and list of favourite songs can be created as playlists.<br>
+                                        &#10004; capable of showing total length of the music being played as well as the remaining time of the music and much more features.<br>
+                                    </p>
+                                    <a target="_blank" href="https://github.com/harshitmuhal/Nightingale-The-Music-Player"><img src="static/images/githubwhite.png" height="20px" width="20px"> View on github</a>
+                                    </div>
+                                    </div>
+                                    </div>
+                                
+                                
+                                    <div class="item" data-id="5">
+                                        <div class="row">
+                                            <div class="project-info">
+                                                <div class="project-title">
+                                                    <h3>Cash Settlement Quiz</h3>
+                                                </div> 
+                                                <hr>
+                                        <p> &#10004; Generates random network of graph representing cash transactions among friends and also provides solution with minimised cashflow. It uses vis.js browser based library to visualise the problem graph and solution graph.<br>
+                                         </p>
+                                        <a target="_blank" href="https://github.com/harshitmuhal/Cash-Settlement-Quiz"><img src="static/images/githubwhite.png" height="20px" width="20px"> View on github</a>
+                                        </div>
+                                        </div>
+                                        </div>
 
-                    <div class="project shadow-large">
-                        <div class="project-image">
-                            <img src="static/images/cash.png"  height="300px" width="300px"/>
+                                    <div class="item" data-id="6">
+                                        <div class="row">
+                                            <div class="project-info">
+                                                <div class="project-title">
+                                                    <h3>Tetris</h3>
+                                                </div> 
+                                                <hr>
+                                        <p> &#10004; Implemented an interactive <b>tetris game</b> using Python programming language and pygame library.<br>
+                                            &#10004; Game has different levels.<br> </p>
+                                        <a target="_blank" href="https://github.com/harshitmuhal/Tetris-Computer-Graphics-Project"><img src="static/images/githubwhite.png" height="20px" width="20px"> View on github</a>
+                                        </div>
+                                        </div>
+                                        </div>
+                        
+
+                        <div class="count_slide">
+                            Project <span class="current_slide">1</span> of <span class="total_slides">x</span>
                         </div>
-                        <!-- End .project-image -->
-                        <div class="project-info">
-                            <h3>Cash Settlement Quiz</h3> <hr>
-                            <p>
-                               &#10004;Generates random network of graph representing cash<br> 
-                               transactions among friends and also provides solution with <br>
-                               minimised cashflow .It uses vis.js browser based library to <br>
-                               visualise the problem graph and solution graph.
-                               <br><br>
-                            <a target="_blank" href="https://github.com/harshitmuhal/Cash-Settlement-Quiz"><img src="static/images/github.png" height="20px" width="20px">
-                            View on github</a>
-                        </div>
-                        <!-- End .project-info -->
+
                     </div>
-                    <!-- End .project -->
-                    
                 </div>
             </div>
-        </div>
+      </div>
     </div>
     <!-- End #projects -->
 
@@ -404,9 +359,12 @@
         <div class="skills">
             <h2 class="heading">Skills</h2>
             <ul>
+                <li>Time Management</li>
+                <li>Leadership skills</li>
                 <li>Machine Learning</li>
                 <li>Deep Learning</li>
                 <li>Natural Language Processing</li>
+                <li>Web Development</li>
             </ul>
         </div>
 
@@ -416,12 +374,15 @@
                 <li>Python</li>
                 <li>C++</li>
                 <li>C</li>
+                <li>Javascript</li>
             </ul>
         </div>
 
         <div class="skills">
             <h2 class="heading">Technologies</h2>
             <ul>
+                <li>FastAPI</li>
+                <li>Nodejs</li>
                 <li>Matplotlib</li>
                 <li>Scikit-Learn</li>
                 <li>Keras</li>
