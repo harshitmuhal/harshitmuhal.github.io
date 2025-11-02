@@ -1,0 +1,18 @@
+# GitHub Pages Configuration
+title: "Harshit Muhal - Software Engineer"
+description: "Portfolio of Harshit Muhal - Software Engineer 2 at Microsoft"
+
+# Disable Jekyll processing
+plugins: []
+markdown: kramdown
+
+# Include all files
+include:
+  - assets/
+  - .nojekyll
+
+# Exclude unnecessary files
+exclude:
+  - README.md
+  - package.json
+  - harshit_muhal_resume_merged.json

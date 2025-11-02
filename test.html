@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            padding: 2rem;
+            text-align: center;
+        }
+        .test-box {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+        .success { color: #00ff00; }
+        .error { color: #ff0000; }
+        .info { color: #00aaff; }
+    </style>
+</head>
+<body>
+    <div class="test-box">
+        <h1>GitHub Pages Deployment Test</h1>
+        <p class="info">If you can see this page with styling, GitHub Pages is working correctly.</p>
+        
+        <h2>File Structure Test</h2>
+        <div id="file-tests">
+            <p>Testing file access...</p>
+        </div>
+        
+        <h2>CSS Loading Test</h2>
+        <div id="css-test">
+            <p>Testing CSS file...</p>
+        </div>
+        
+        <h2>JavaScript Test</h2>
+        <div id="js-test">
+            <p>Testing JavaScript...</p>
+        </div>
+        
+        <a href="index.html" style="color: #667eea; text-decoration: none; font-size: 1.2rem;">
+            → Go to Main Portfolio
+        </a>
+    </div>
+
+    <script>
+        // Test CSS loading
+        fetch('./assets/css/style.css')
+            .then(response => {
+                const cssTest = document.getElementById('css-test');
+                if (response.ok) {
+                    cssTest.innerHTML = '<p class="success">✓ CSS file accessible</p>';
+                } else {
+                    cssTest.innerHTML = '<p class="error">✗ CSS file not accessible (Error: ' + response.status + ')</p>';
+                }
+            })
+            .catch(error => {
+                document.getElementById('css-test').innerHTML = '<p class="error">✗ CSS file failed to load: ' + error.message + '</p>';
+            });
+
+        // Test JS loading
+        fetch('./assets/js/script.js')
+            .then(response => {
+                const jsTest = document.getElementById('js-test');
+                if (response.ok) {
+                    jsTest.innerHTML = '<p class="success">✓ JavaScript file accessible</p>';
+                } else {
+                    jsTest.innerHTML = '<p class="error">✗ JavaScript file not accessible (Error: ' + response.status + ')</p>';
+                }
+            })
+            .catch(error => {
+                document.getElementById('js-test').innerHTML = '<p class="error">✗ JavaScript file failed to load: ' + error.message + '</p>';
+            });
+
+        // File structure test
+        const fileTests = document.getElementById('file-tests');
+        fileTests.innerHTML = `
+            <p class="info">Current URL: ${window.location.href}</p>
+            <p class="info">Base URL: ${window.location.origin}</p>
+            <p class="info">Path: ${window.location.pathname}</p>
+        `;
+    </script>
+</body>
+</html>
