@@ -1,0 +1,45 @@
+{
+  "name": "harshit-muhal-portfolio",
+  "version": "1.0.0",
+  "description": "Modern portfolio website for Harshit Muhal - Software Engineer 2 at Microsoft",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server .",
+    "build": "echo 'No build process required for static site'",
+    "deploy": "gh-pages -d .",
+    "lint": "eslint assets/js/*.js",
+    "format": "prettier --write '**/*.{html,css,js,md}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harshitmuhal/harshitmuhal.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "software-engineer",
+    "microsoft",
+    "web-development",
+    "responsive-design",
+    "javascript",
+    "css3",
+    "html5"
+  ],
+  "author": "Harshit Muhal <hrshtmuhal8@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harshitmuhal/harshitmuhal.github.io/issues"
+  },
+  "homepage": "https://harshitmuhal.github.io",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "gh-pages": "^4.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^2.8.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

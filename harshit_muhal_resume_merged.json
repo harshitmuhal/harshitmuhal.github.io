@@ -1,0 +1,323 @@
+{
+  "basics": {
+    "name": "Harshit Muhal",
+    "label": "SDE-2 @Microsoft | DTU'22 | Expert @Codeforces",
+    "email": "hrshtmuhal8@gmail.com",
+    "phone": "+91 7982781805",
+    "website": "https://harshitmuhal.github.io",
+    "summary": "\u25b6\ufe0e A self-motivated and hardworking individual who is constantly involved in self-improvement and always ready to take up challenging tasks in order to test my skills and improve them further. A keen observer who believes in learning by sharing knowledge. Enthusiastic Programmer, skilled in C, C#, Python, MySQL, and C++ with excellent command over Data-Structures & Algorithms. Having experience working on a diverse set of domains, including web development and Machine Learning. \u25b6\ufe0e Strong engineering professional having a Bachelor of Technology (B.Tech) focused in Computer Engineering from Delhi Technological University with a CGPA of 9.53 and having finished with dept. rank 7 \u2714\ufe0e Languages: C, C++, C#, Python, JavaScript, SQL \u2714\ufe0e Developer Tools: VS Code, Visual Studio, SQL Server Management Studios, Azure App services, Azure functions and WebJobs, Azure Table Storage, Azure Cosmos DB, Google Collaboratory, Postman, Pycharm, Azure DevOps \u2714\ufe0e Technologies/Frameworks/OS: Windows, macOS, GitHub, Git, Numpy, Pandas, Scikit-learn, Keras, matplotlib \u2714\ufe0e Tech Domains: Web Development, Machine Learning, Backend development. \u25b6\ufe0e I am always exploring myself in all areas of my interest and learning as much as I can.",
+    "location": {
+      "city": "Hyderabad",
+      "region": "Telangana",
+      "countryCode": "IN"
+    },
+    "profiles": {
+      "linkedin": "https://www.linkedin.com/in/harshitmuhal/",
+      "github": "https://github.com/harshitmuhal"
+    }
+  },
+  "work": [
+    {
+      "company": "Microsoft",
+      "position": "Software Engineer 2",
+      "location": "Hyderabad, India",
+      "startDate": "2025-06-01",
+      "endDate": "Present",
+      "summary": "I focus on designing and building reliable, high-performance backend systems at scale. I work across cloud platforms, distributed systems, and microservice architectures to improve system efficiency and user experience.",
+      "highlights": [
+        "Integrated streaming functionality into chatbot API using Azure OpenAI GPT-4.0 model, enabling real-time responses from KB articles via prompt engineering. Optimized system prompts, resolved performance bottlenecks and reduced response time from ~40s to ~10s, enhancing user experience and efficiency."
+      ]
+    },
+    {
+      "company": "Microsoft",
+      "position": "Software Engineer",
+      "location": "Hyderabad, India",
+      "startDate": "2022-06-01",
+      "endDate": "2025-05-01",
+      "summary": "Led multiple key projects across Azure services, Storage Account, CosmosDB, Azure Active Directory, and .NET Core. Engineered scalable solutions using Azure Functions, enhancing system resilience and eliminating manual interventions across microservices. Designed solutions to resolve performance bottlenecks, significantly improving operational efficiency. Recognized with EC Ace and Learn-It-All awards for exceptional performance and continuous learning.",
+      "highlights": [
+        "Engineered an Azure-based asynchronous processing solution for a Windows & XBOX service using Azure Functions, eliminating external API dependencies, reducing $30K in annual Azure costs, and scaling production load by 5x. Optimized processing time from 7 minutes to 2 minutes for 5K+ devices.",
+        "Diagnosed and resolved 30+ monthly API failures in a WCF microservice by implementing Azure Functions for asynchronous processing, eliminating manual interventions and enhancing system resilience. Applied similar cloud-based optimizations across multiple microservices.",
+        "Led the end-to-end migration of CosmosDB SDK from V2 to V3, modernizing authentication with Managed Identities and extending secure access across Azure Service Bus, Event Hubs, and Storage Accounts, improving security and maintainability."
+      ]
+    },
+    {
+      "company": "Microsoft",
+      "position": "Software Engineer Intern",
+      "location": "India",
+      "startDate": "2021-05-01",
+      "endDate": "2021-07-01",
+      "summary": "Worked with the Azure Global Commercial Industry team to introduce a functionality allowing the consuming services to quickly rollback data tier in case deployment has some issues and made changes to the upgrade functionality as well. Worked on writing low level design details along with manual testing of the functionality.",
+      "highlights": [
+        "Developed a rollback mechanism for Azure CosmosDB documents, enabling consuming services to swiftly restore the data tier in case of deployment failures, enhancing system resilience and uptime. Authored low-level design documentation and executed manual testing to validate implementation."
+      ]
+    },
+    {
+      "company": "CodeChef DTU chapter",
+      "position": "Tech Team Member",
+      "startDate": "2021-01-01",
+      "endDate": "2021-07-01",
+      "summary": "Contributed to organizing competitive programming contests and technical events at DTU."
+    },
+    {
+      "company": "GeeksforGeeks",
+      "position": "Technical Content Writer",
+      "startDate": "2020-07-01",
+      "endDate": "2020-09-01",
+      "summary": "Contributed new articles related to Data Structures and Algorithms. Improved existing codes and articles.",
+      "highlights": [
+        "Contribute new articles related to Data Structures and Algorithms",
+        "Improve existing codes and articles"
+      ]
+    },
+    {
+      "company": "D_CODER",
+      "position": "Member",
+      "startDate": "2018-10-01",
+      "endDate": "2019-06-01",
+      "summary": "Participated in coding club activities and competitive programming."
+    }
+  ],
+  "education": [
+    {
+      "institution": "Delhi Technological University (Formerly DCE)",
+      "studyType": "B.Tech - Bachelor of Technology",
+      "area": "Computer Engineering",
+      "startDate": "2018-08-01",
+      "endDate": "2022-06-01",
+      "gpa": "9.53/10.0",
+      "departmentRank": 7
+    },
+    {
+      "institution": "DAV Public School",
+      "studyType": "Class XII (CBSE)",
+      "percentage": "93.6%",
+      "startDate": "2016-01-01",
+      "endDate": "2018-01-01"
+    },
+    {
+      "institution": "DAV Public School",
+      "studyType": "Class X (CBSE)",
+      "cgpa": "10.0/10.0",
+      "startDate": "2014-01-01",
+      "endDate": "2016-01-01"
+    }
+  ],
+  "publications": [
+    {
+      "name": "An Ensemble Approach for Credit Card Fraud Detection Using Champion-Challenger Analysis",
+      "publisher": "IEEE - 2022 International Conference on Innovative Computing, Intelligent Communication and Smart Electrical Systems (ICSES)",
+      "releaseDate": "2022-10-14",
+      "doi": "https://doi.org/10.1109/ICSES55317.2022.9914387",
+      "year": 2022
+    },
+    {
+      "name": "Identification of IUU Transshipment Activity Using AIS Data",
+      "publisher": "IEEE - 2022 3rd International Conference for Emerging Technology (INCET)",
+      "releaseDate": "2022-07-15",
+      "doi": "https://doi.org/10.1109/INCET54531.2022.9825321",
+      "year": 2022
+    },
+    {
+      "name": "Two-Stage Customer Segmentation using K-Means Clustering And Artificial Neural Network",
+      "publisher": "International Research Journal of Engineering and Technology (IRJET)",
+      "releaseDate": "2021-03-09",
+      "url": "https://www.irjet.net/archives/V8/i3/IRJET-V8I379.pdf",
+      "year": 2021
+    }
+  ],
+  "skills": [
+    {
+      "category": "Cloud & DevOps",
+      "keywords": [
+        "Microsoft Graph API",
+        "Azure Active Directory",
+        "Azure Functions",
+        "Azure Key Vault",
+        "Azure Storage (Cosmos DB, Blob Containers, Storage Queues)",
+        "Azure DevOps",
+        "Microsoft Azure",
+        "Azure Cosmos DB"
+      ]
+    },
+    {
+      "category": "Programming Languages",
+      "keywords": [
+        "C#",
+        "Python (Programming Language)",
+        "C++ (Programming Language)",
+        "C (Programming Language)",
+        "JavaScript",
+        "SQL"
+      ]
+    },
+    {
+      "category": "Frameworks & Libraries",
+      "keywords": [
+        ".NET Framework",
+        ".NET Core",
+        "ASP.NET",
+        "Django",
+        "FastAPI",
+        "Keras",
+        "NumPy",
+        "Pandas (Software)",
+        "Scikit-learn"
+      ]
+    },
+    {
+      "category": "Developer Tools",
+      "keywords": [
+        "Visual Studio",
+        "VS Code",
+        "SQL Server Management Studio",
+        "Git",
+        "GitHub",
+        "Azure App services",
+        "Azure Functions and WebJobs",
+        "Azure Table Storage",
+        "Google Collaboratory",
+        "Postman",
+        "Pycharm"
+      ]
+    },
+    {
+      "category": "Machine Learning & Data Science",
+      "keywords": [
+        "Machine Learning",
+        "Deep Learning",
+        "Data Structures",
+        "Algorithms",
+        "Numpy",
+        "Pandas",
+        "Scikit-learn",
+        "Keras",
+        "matplotlib"
+      ]
+    },
+    {
+      "category": "Technical Domains",
+      "keywords": [
+        "Back-End Web Development",
+        "Web Development",
+        "Machine Learning",
+        "Deep Learning",
+        "Data Structures"
+      ]
+    },
+    {
+      "category": "Soft Skills",
+      "keywords": [
+        "Leadership",
+        "Management",
+        "Teamwork",
+        "Strategic Planning",
+        "Project Management"
+      ]
+    },
+    {
+      "category": "Office & Productivity",
+      "keywords": [
+        "Microsoft Word",
+        "Apple Pages",
+        "Apple Numbers"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Full professional proficiency"
+    },
+    {
+      "language": "Hindi",
+      "fluency": "Full professional proficiency"
+    }
+  ],
+  "projects": [
+    {
+      "name": "IMAGE CAPTIONING",
+      "startDate": "2020-09-01",
+      "summary": "Given any real-world image, this project generates an appropriate caption using Machine Learning/Deep Learning. Model is trained on the Flickr8k dataset. For training, Images were encoded into a vector using the Resnet model pre-trained on imagenet dataset, Captions were encoded using LSTM layers and both the inputs were fed to a feed-forward Neural Network to train the model to predict new captions using supervised learning.",
+      "url": "https://github.com/harshitmuhal/Image-Captioning"
+    },
+    {
+      "name": "IMDB Review Sentiment Analysis",
+      "startDate": "2020-10-01",
+      "endDate": "2020-11-01",
+      "summary": "Implemented multiple CNN-LSTM based neural networks. Achieved maximum accuracies for the network architecture which used a CNN-LSTM with combined kernels from multiple branches and other architecture that used a CNN-LSTM neural network with a residual connection. It is trained on the IMDB movie reviews dataset and achieved maximum accuracy of 89.39%.",
+      "url": "https://github.com/harshitmuhal/IMDb-review-sentiment-analysis"
+    },
+    {
+      "name": "Face Detection and Recognition",
+      "startDate": "2020-06-01",
+      "summary": "This program uses the OpenCV library for face detection and recognition in a live video stream. This program draws a rectangle over a detected face and displays the name of the person if the program has been already trained for the face of that person otherwise 'random' is displayed instead of any person name.",
+      "url": "https://github.com/harshitmuhal/face-detection-and-recognition"
+    },
+    {
+      "name": "Dominant Color Extraction Using K-Means",
+      "startDate": "2020-08-01",
+      "endDate": "2020-08-01",
+      "summary": "Used the KMeans algorithm to find the most dominant colors of a given image and created a new image with these dominant colors.",
+      "url": "https://github.com/harshitmuhal/Dominant-Color-Extraction-using-KMeans"
+    },
+    {
+      "name": "Emoji Prediction using LSTM",
+      "startDate": "2020-08-01",
+      "endDate": "2020-08-01",
+      "summary": "Implementation of a basic emoji predictor using stacked LSTM on a small dataset.",
+      "url": "https://github.com/harshitmuhal/Emoji-Predictor"
+    },
+    {
+      "name": "Nightingale: The Music Player",
+      "startDate": "2019-05-01",
+      "endDate": "2019-05-01",
+      "summary": "GUI integrated advanced music player developed in python capable of playing/ stopping/ pausing/ muting / rewinding the music. A list of favorite songs can be created as playlists and has many more features.",
+      "url": "https://github.com/harshitmuhal/Nightingale-The-Music-Player"
+    }
+  ],
+  "achievements": {
+    "awards": [
+      {
+        "title": "EC Excellence Ace Award",
+        "description": "Recognized for top performance and consistently exceeding expectations at Microsoft."
+      },
+      {
+        "title": "EC Learn-It-All Award",
+        "description": "Honored for continuous learning and technical competency enhancement at Microsoft."
+      }
+    ],
+    "competitiveProgramming": [
+      {
+        "competition": "Google Hash Code 2021",
+        "globalRank": 1442,
+        "countryRank": 244
+      },
+      {
+        "competition": "Google Kickstart Round B 2021",
+        "globalRank": 609,
+        "username": "harshitmuhal"
+      },
+      {
+        "competition": "Google Kickstart Round G 2020",
+        "globalRank": 844,
+        "username": "harshitmuhal"
+      },
+      {
+        "competition": "Codeforces Round 720",
+        "globalRank": 641,
+        "username": "Infinite.Loop"
+      },
+      {
+        "competition": "Codeforces Round 719",
+        "globalRank": 478,
+        "username": "Infinite.Loop"
+      }
+    ],
+    "academicAchievements": [
+      "Achieved Top 7 rank in department out of ~450 students in B.Tech at DTU.",
+      "Secured Department Rank 5 in III Semester with a 9.82 CGPA.",
+      "Ranked 6th in II Semester with a 9.9 CGPA."
+    ]
+  }
+}

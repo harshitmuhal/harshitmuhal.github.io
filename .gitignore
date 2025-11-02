@@ -1,4 +1,40 @@
-node_modules/
-.sass-cache/
+# GitHub Pages and Static Site Files
+.jekyll-cache/
 _site/
+
+# Development
+.vscode/
+*.log
+*.tmp
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Node modules (if using any build tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE files
+*.sublime-project
+*.sublime-workspace
 .idea/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Cache
+.cache/
