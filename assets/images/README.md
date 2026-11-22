@@ -48,4 +48,4 @@ If you don't have images ready, you can use placeholder services:
 2. Update the `src` attributes in `index.html` to match your image filenames
 3. Ensure all images are optimized for web use
 4. Use images you have permission to publish, and add meaningful `alt` text for content images
-5. Do not commit screenshots showing private notes, sign-in tokens, or vault exports to this public repository
+5. Do not commit screenshots showing private notes, sign-in tokens, or note backups to this public repository

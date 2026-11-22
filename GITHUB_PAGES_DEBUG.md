@@ -87,9 +87,9 @@ The route is `https://harshitmuhal.github.io/notes/`, with local testing at `htt
 ### Notes Do Not Save, or Another Device Looks Outdated
 
 - Make sure `notes_vaults` exists and its row-level policies allow authenticated users to read, insert, and update **their own** row. Never disable those policies to fix an error.
-- Wait for **Synced to cloud** before closing the page. Drafts after a failed save exist in memory only: keep the tab open, retry, or export.
+- Wait for **Synced to cloud** in the workspace header before closing the page. Drafts after a failed save exist in memory only: keep the tab open and retry, or copy unsaved text somewhere safe.
 - Cloud refresh happens on return to the tab and periodically while visible and not editing; it is not real-time collaboration.
-- On a conflict, export the draft before choosing **Reload cloud copy**. The revision check deliberately blocks a stale device from overwriting newer edits.
+- On a conflict, copy unsaved note text somewhere safe before choosing **Reload cloud copy**. The revision check deliberately blocks a stale device from overwriting newer edits.
 - Different Supabase accounts have separate vaults. An empty vault on another account is not proof that your notes were deleted.
 
 ### Folder Selection and Formatting

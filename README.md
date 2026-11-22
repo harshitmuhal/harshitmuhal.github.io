@@ -70,7 +70,7 @@ Select or create a note in the file explorer. The **Folder** dropdown moves that
 
 On mobile, the explorer is a drawer that closes when you select a note. Use the icon rail to reopen it or search. Editable fields use at least 16px text to avoid the small-text focus-zoom trigger, while pinch-to-zoom remains enabled. Sidebar open/closed state is preserved across layout changes.
 
-Changes autosave to the cloud after a short pause. Offline or failed saves remain **in memory only**: keep the tab open, retry, or export the vault before leaving. An export is a JSON backup, not an automatic import feature. Concurrent-device conflicts require exporting your draft and reloading the cloud copy; this is not real-time collaborative editing.
+Changes autosave to the cloud after a short pause. Sync status and recovery controls appear in the workspace header; there is no footer, word counter, or export/import feature. Offline or failed saves remain **in memory only**: keep the tab open and retry, or copy unsaved text somewhere safe before leaving. On a concurrent-device conflict, preserve your draft text before reloading the cloud copy; this is not real-time collaborative editing.
 
 ### Notes checks
 

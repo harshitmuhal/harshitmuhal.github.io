@@ -109,7 +109,7 @@ export class VaultStore {
   async flush() {
     if (this.conflict)
       throw new Error(
-        "Another device updated this vault. Export your draft, then reload the cloud copy before editing further."
+        "Another device updated this vault. Copy unsaved text somewhere safe, then reload the cloud copy before editing further."
       );
     while (this.dirty) {
       this.onStatus("saving");
@@ -129,7 +129,7 @@ export class VaultStore {
         this.conflict = true;
         this.onStatus("conflict");
         throw new Error(
-          "Another device updated this vault. Your draft is still on this page. Export it before reloading the cloud copy."
+          "Another device updated this vault. Your draft is still on this page. Copy unsaved text somewhere safe before reloading the cloud copy."
         );
       }
       if (error) {

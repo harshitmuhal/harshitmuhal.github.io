@@ -58,9 +58,6 @@
           d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7zM12 10v7m-3-3.5h6"
         />
       </symbol>
-      <symbol id="icon-download" viewBox="0 0 24 24">
-        <path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4" />
-      </symbol>
       <symbol id="icon-exit" viewBox="0 0 24 24">
         <path d="M9 5H4v14h5m5-14 7 7-7 7M8 12h13" />
       </symbol>
@@ -233,11 +230,6 @@
           </div>
           <span id="account" class="account"></span>
           <div class="account-actions">
-            <button id="export" class="quiet">
-              <svg class="icon" aria-hidden="true">
-                <use href="#icon-download" /></svg
-              >Export vault
-            </button>
             <button id="sign-out" class="quiet">
               <svg class="icon" aria-hidden="true">
                 <use href="#icon-exit" /></svg
@@ -260,6 +252,12 @@
           >
             <svg class="icon" aria-hidden="true"><use href="#icon-plus" /></svg>
           </button>
+          <div class="sync-controls">
+            <span id="sync-status" role="status" aria-live="polite"
+              >Loading...</span
+            ><button id="retry" class="quiet" hidden>Retry sync</button
+            ><button id="reload" class="quiet" hidden>Reload cloud copy</button>
+          </div>
         </header>
         <div class="pane-navigation">
           <svg class="icon" aria-hidden="true"><use href="#icon-folder" /></svg
@@ -372,25 +370,10 @@
                 </button>
               </div>
               <div id="note-body"></div>
-              <footer class="editor-footer">
-                <span
-                  >Enter for a new item. Enter twice to return to text.</span
-                >
-              </footer>
             </div>
           </section>
         </div>
       </main>
-      <footer class="statusbar">
-        <span class="statusbar-label">Personal vault</span>
-        <div class="statusbar-right">
-          <span id="sync-status" role="status" aria-live="polite"
-            >Loading...</span
-          ><button id="retry" class="quiet" hidden>Retry sync</button
-          ><button id="reload" class="quiet" hidden>Reload cloud copy</button
-          ><span id="word-count">0 words</span>
-        </div>
-      </footer>
     </div>
     <dialog id="category-dialog">
       <form id="category-form">

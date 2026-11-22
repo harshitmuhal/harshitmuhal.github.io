@@ -147,7 +147,7 @@ Changes will be live within a few minutes.
 - Never commit passwords, access tokens, Google Client Secrets, Supabase secret keys, or service-role keys
 - Supabase's **publishable/anon key** is intentionally public and belongs in `notes/config.js`; row-level security must remain enabled
 - Store private authentication secrets in Supabase provider settings. Environment variables do not protect a secret if it is embedded in browser JavaScript
-- Do not commit exported vault JSON or screenshots containing private notes to this public repository
+- Do not commit private note backups or screenshots containing private notes to this public repository
 - Keep dependencies updated
 
 ## Analytics (Optional)

@@ -133,7 +133,7 @@ async function save() {
   } catch (error) {
     if (store === current)
       showError(
-        `Could not save: ${error.message} Keep this tab open or export your draft.`
+        `Could not save: ${error.message} Keep this tab open and retry syncing. Copy unsaved text somewhere safe before leaving.`
       );
   }
 }
@@ -244,12 +244,6 @@ function renderNotes() {
   );
 }
 
-function updateWordCount() {
-  const body = richEditor.getText().trim();
-  const count = body ? body.split(/\s+/).length : 0;
-  $("word-count").textContent = `${count} ${count === 1 ? "word" : "words"}`;
-}
-
 function renderEditor() {
   const item = note();
   $("editor").hidden = !item;
@@ -263,7 +257,6 @@ function renderEditor() {
   richEditor.history.clear();
   $("note-category").value = item?.categoryId || "inbox";
   decorateChecklist();
-  updateWordCount();
 }
 
 function decorateChecklist() {
@@ -330,7 +323,6 @@ function initEditor() {
     item.updatedAt = new Date().toISOString();
     changed();
     renderNotes();
-    updateWordCount();
   });
 }
 
@@ -396,7 +388,6 @@ async function applySession(session) {
   $("note-tab-title").textContent = "New tab";
   $("path-note").textContent = "New tab";
   document.title = "Notes | Personal vault";
-  updateWordCount();
   $("category-dialog").close();
   $("workspace").hidden = true;
   $("auth-screen").hidden = false;
@@ -493,7 +484,6 @@ $("note-title").addEventListener("input", () => {
   item.updatedAt = new Date().toISOString();
   changed();
   renderNotes();
-  updateWordCount();
 });
 
 $("note-category").addEventListener("change", () => {
@@ -574,32 +564,19 @@ $("reload").addEventListener("click", () => {
   if (
     store?.dirty &&
     !confirm(
-      "Discard this unsaved draft and load the cloud copy? Export first if you want to keep your changes."
+      "Discard this unsaved draft and load the cloud copy? Copy unsaved text somewhere safe first if you want to keep your changes."
     )
   )
     return;
   clearTimeout(saveTimer);
   loadCloud(true);
 });
-$("export").addEventListener("click", () => {
-  if (!ready) return;
-  const url = URL.createObjectURL(
-    new Blob([JSON.stringify(store.data, null, 2)], {
-      type: "application/json",
-    })
-  );
-  const link = document.createElement("a");
-  link.href = url;
-  link.download = `notes-vault-${new Date().toISOString().slice(0, 10)}.json`;
-  link.click();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-});
 $("sign-out").addEventListener("click", async () => {
   if (store?.pending) await save();
   if (
     store?.dirty &&
     !confirm(
-      "Your draft is not saved. Sign out and discard it? Export first to keep a copy."
+      "Your draft is not saved. Sign out and discard it? Copy unsaved text somewhere safe first to keep it."
     )
   )
     return;

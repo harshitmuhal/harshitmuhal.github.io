@@ -26,7 +26,7 @@ Notes and categories autosave after a short pause. The sidebar contains your not
 
 The **Folder** dropdown above the title moves the current note, updates folder counts, and selects the destination folder. The breadcrumb shows the current note's actual folder, including when browsing All notes. The note title is separate from the editor's content headings and has a larger, bolder style. Existing tasks from the old standalone to-do panel remain in the migrated **Things to do** note.
 
-The icon rail toggles the file explorer and opens search. The explorer shows folders and note files; the active note appears in the tab strip. On small screens the explorer opens as a drawer and closes when you select a note. The + button in the tab strip creates a note even when the explorer is hidden. Sync state and word count appear in the bottom status bar.
+The icon rail toggles the file explorer and opens search. The explorer shows folders and note files; the active note appears in the tab strip. On small screens the explorer opens as a drawer and closes when you select a note. The + button in the tab strip creates a note even when the explorer is hidden. Sync state, retry, and cloud-reload controls appear in the workspace header. There is no footer, word counter, or export/import feature.
 
 The editor uses the full available width with compact spacing. Light is the default theme; the moon/sun button in the icon rail switches between light and dark. Your theme choice is saved in this browser, independently of your cloud notes.
 
@@ -34,9 +34,9 @@ On mobile and touch devices, editable fields use at least 16px text to avoid the
 
 Rich formatting is stored as Quill text operations, not executable HTML, alongside a plain-text copy for searching. Older plain-text notes remain readable; Markdown headings and task lists are recognized when opened. Any tasks from the previous separate to-do panel are automatically preserved in a **Things to do** note in Inbox, with their completion state intact. No database changes are needed.
 
-The page fetches cloud changes on return to the tab and every 30 seconds while visible and not editing. Concurrent saves use a revision check: a stale device cannot silently overwrite newer changes. On a conflict, export your draft, reload the cloud copy, then copy any desired draft content back into the editor. This is cross-device sync, not real-time collaborative editing.
+The page fetches cloud changes on return to the tab and every 30 seconds while visible and not editing. Concurrent saves use a revision check: a stale device cannot silently overwrite newer changes. On a conflict, copy unsaved note text somewhere safe, reload the cloud copy, then add any desired draft content back into the editor. A plain-text copy does not preserve rich formatting. This is cross-device sync, not real-time collaborative editing.
 
-If saving fails or you are offline, the page shows an error and retains the unsaved draft **in memory only**. Keep the tab open, retry syncing, or use **Export vault**. There is no offline persistent cache of note content. Exported JSON is a readable backup, not an automatic import format. Authentication persists in browser storage; sign out on shared devices. Browser sessions can expire, so export unsaved work before signing in again.
+If saving fails or you are offline, the page shows an error and retains the unsaved draft **in memory only**. Keep the tab open and retry syncing, or copy unsaved text somewhere safe before leaving. There is no offline persistent cache of note content. Authentication persists in browser storage; sign out on shared devices. Browser sessions can expire, so preserve unsaved text before signing in again.
 
 ## Local development
 
@@ -59,4 +59,4 @@ Also verify Google account selection after signing out, a folder move from All n
 - `config.js`: public Supabase URL and publishable/anon key only.
 - `supabase.sql`: initial table and row-level policies; run once, not as a repeat deployment migration.
 
-Static site files and documentation are public. Privacy comes from Supabase authentication and row-level policies, not the `/notes/` URL or `noindex` metadata. Do not commit private vault exports, access tokens, or note screenshots to the repository.
+Static site files and documentation are public. Privacy comes from Supabase authentication and row-level policies, not the `/notes/` URL or `noindex` metadata. Do not commit private note backups, access tokens, or note screenshots to the repository.

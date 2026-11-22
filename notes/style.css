@@ -172,7 +172,7 @@ p {
   height: 100dvh;
   display: grid;
   grid-template-columns: 44px 248px minmax(0, 1fr);
-  grid-template-rows: minmax(0, 1fr) 28px;
+  grid-template-rows: minmax(0, 1fr);
   overflow: hidden;
 }
 .ribbon {
@@ -411,6 +411,7 @@ p {
 }
 .topbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   gap: 5px;
   min-height: 43px;
@@ -644,42 +645,22 @@ p {
   margin: 0;
   text-align: left;
 }
-.editor-footer {
-  color: var(--faint);
-  font-size: 10px;
-  padding-top: 8px;
-}
-.statusbar {
-  grid-column: 1 / -1;
-  grid-row: 2;
+.sync-controls {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
-  padding: 0 12px;
-  background: var(--panel);
-  border-top: 1px solid var(--border);
+  justify-content: flex-end;
+  gap: 4px;
+  margin-left: auto;
+  padding: 4px 0 7px;
   font-size: 10px;
   color: var(--muted);
   min-width: 0;
+  max-width: 100%;
 }
-.statusbar-label {
-  padding-left: 40px;
-  white-space: nowrap;
-}
-.statusbar-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 14px;
-  min-width: 0;
-}
-.statusbar .quiet {
+.sync-controls .quiet {
   padding: 2px 4px;
   font-size: 10px;
-  white-space: nowrap;
-}
-#word-count {
   white-space: nowrap;
 }
 #sync-status {
@@ -898,7 +879,7 @@ dialog h2 {
     position: fixed;
     left: 44px;
     top: 0;
-    bottom: 28px;
+    bottom: 0;
     width: min(248px, calc(100vw - 44px));
     z-index: 20;
     transform: translateX(-100%);
@@ -912,7 +893,7 @@ dialog h2 {
   .sidebar-open .sidebar-backdrop {
     display: block;
     position: fixed;
-    inset: 0 0 28px 44px;
+    inset: 0 0 0 44px;
     z-index: 19;
     border: 0;
     border-radius: 0;
@@ -943,17 +924,6 @@ dialog h2 {
   }
   .toolbar-divider {
     margin: 0 2px;
-  }
-  .statusbar-label {
-    display: none;
-  }
-  .statusbar-right {
-    width: 100%;
-    gap: 8px;
-  }
-  .statusbar {
-    font-size: 9px;
-    padding: 0 8px;
   }
   #note-body .ql-editor {
     font-size: 16px;
