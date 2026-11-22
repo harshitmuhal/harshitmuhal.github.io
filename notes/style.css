@@ -899,7 +899,7 @@ dialog h2 {
     left: 44px;
     top: 0;
     bottom: 28px;
-    width: 248px;
+    width: min(248px, calc(100vw - 44px));
     z-index: 20;
     transform: translateX(-100%);
     visibility: hidden;
@@ -956,6 +956,22 @@ dialog h2 {
     padding: 0 8px;
   }
   #note-body .ql-editor {
-    font-size: 14px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 760px), (hover: none) and (pointer: coarse) {
+  input,
+  textarea,
+  select,
+  .sidebar input,
+  .editor-toolbar select,
+  .format-toolbar select,
+  .auth-card input,
+  dialog input,
+  #note-body .ql-editor {
+    font-size: 16px;
+  }
+  .note-title {
+    font-size: 29px;
   }
 }

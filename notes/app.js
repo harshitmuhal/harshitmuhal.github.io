@@ -52,7 +52,7 @@ function setSidebarOpen(open) {
 
 setSidebarOpen(!mobileLayout.matches);
 mobileLayout.addEventListener("change", () =>
-  setSidebarOpen(!mobileLayout.matches)
+  setSidebarOpen($("toggle-sidebar").getAttribute("aria-expanded") === "true")
 );
 $("toggle-sidebar").addEventListener("click", () =>
   setSidebarOpen($("toggle-sidebar").getAttribute("aria-expanded") !== "true")
