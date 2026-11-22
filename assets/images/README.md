@@ -1,14 +1,16 @@
 # Image Assets
 
-This folder contains all the images used in the portfolio website.
+This folder is reserved for portfolio image assets. It currently contains this guide, not the optional image files listed below. The current portfolio uses CSS/icon-based visuals rather than `<img>` elements.
 
-## Required Images
+The `/notes/` page uses inline SVG icons, a text Google sign-in mark, and the Quill editor; it does not require images in this folder. Notes UI assets live under `notes/`; see [the notes setup guide](../../notes/SETUP.md).
 
-Please add the following images to make the portfolio complete:
+## Optional Images
+
+If you extend the portfolio with photos or project screenshots, these filenames are suggestions rather than existing or required assets:
 
 ### Profile Images
 - `profile.jpg` - Your professional headshot (400x400px recommended)
-- `favicon.ico` - Website favicon (32x32px)
+- `favicon.ico` - Website favicon (32x32px); the link in the root `index.html` is currently commented out, so enable it only after adding the file
 
 ### Project Images
 - `image-captioning.jpg` - Screenshot or illustration for Image Captioning project
@@ -45,3 +47,5 @@ If you don't have images ready, you can use placeholder services:
 1. Add your images to this folder
 2. Update the `src` attributes in `index.html` to match your image filenames
 3. Ensure all images are optimized for web use
+4. Use images you have permission to publish, and add meaningful `alt` text for content images
+5. Do not commit screenshots showing private notes, sign-in tokens, or vault exports to this public repository

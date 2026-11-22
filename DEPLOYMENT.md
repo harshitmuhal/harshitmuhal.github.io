@@ -1,12 +1,13 @@
 # Deployment Guide for GitHub Pages
 
-This guide will help you deploy your portfolio website to GitHub Pages.
+This guide covers the portfolio and the `/notes/` workspace on GitHub Pages. Both are static pages; Supabase handles notes authentication and private data storage separately. See [notes/SETUP.md](notes/SETUP.md) for the backend setup.
 
 ## Prerequisites
 
 1. GitHub account
 2. Git installed on your computer
 3. Your portfolio files ready
+4. A configured Supabase project if you want notes sign-in and cloud sync
 
 ## Step-by-Step Deployment
 
@@ -31,6 +32,8 @@ cd yourusername.github.io
 
 1. Copy all files from your portfolio folder to the cloned repository folder
 2. Make sure `index.html` is in the root directory
+3. Keep `.nojekyll` and the complete `notes/` directory, including `index.html`, `app.js`, `content.js`, `vault.js`, `theme.js`, `style.css`, and `config.js`
+4. Run `notes/supabase.sql` once in Supabase's SQL editor and configure authentication before expecting the notes page to work
 
 ### 4. Commit and Push
 
@@ -59,6 +62,28 @@ git push origin main
 Your website will be available at: `https://yourusername.github.io`
 
 **Note**: It may take a few minutes for the site to be live after the first deployment.
+
+## Deploying the Notes Page
+
+For this repository, the portfolio URL is `https://harshitmuhal.github.io/` and the notes URL is `https://harshitmuhal.github.io/notes/`. The directory's `index.html` provides the `/notes/` route; no frontend build or SPA rewrite is needed. The current asset and callback paths assume this root-hosted site, not a project site under an extra repository prefix.
+
+1. Set `supabaseUrl` and `supabaseKey` in `notes/config.js` using the project URL and a **publishable or legacy anon key**.
+2. In Supabase Authentication > URL Configuration, set the production Site URL to `https://harshitmuhal.github.io/notes/` and allow that same redirect URL.
+3. Enable Email and, if desired, Google under **Sign In / Providers**. Keep Google's Client Secret in Supabase, not in the static site.
+4. For Google OAuth, use the Supabase callback URL copied from its Google provider settings as Google's authorized redirect URI. The app then returns from Supabase to `/notes/`; these are two different redirect settings.
+5. Deploy the entire notes directory, then test sign-in, note creation, folder moves, inline checklists, and persistence after reloading.
+
+No SQL migration is needed for themes, account selection, mobile input sizing, or the unified rich-text editor. The original `notes_vaults` table and per-account policies remain in use. Do not rerun the create-table script against an already configured database as an update step.
+
+### Local Notes Testing
+
+From the repository root:
+
+```powershell
+python -m http.server 8000 --bind 127.0.0.1
+```
+
+Open `http://localhost:8000/notes/`. Add that exact URL to Supabase's allowed redirect URLs; keep the production Site URL unchanged. For Google, also allow `http://localhost:8000` as an authorized JavaScript origin. The OAuth callback still goes to the hosted Supabase project, not to your local notes page. Local and deployed pages access the same cloud vault when using the same Supabase account.
 
 ## Custom Domain (Optional)
 
@@ -92,6 +117,8 @@ Changes will be live within a few minutes.
 2. **404 Error**: Make sure `index.html` is in the root directory
 3. **Images not showing**: Check image paths are correct and images are committed
 4. **CSS/JS not loading**: Verify file paths in `index.html`
+5. **Notes configuration or sign-in errors**: Follow [notes/SETUP.md](notes/SETUP.md) and [GITHUB_PAGES_DEBUG.md](GITHUB_PAGES_DEBUG.md); deploying HTML alone does not configure Supabase
+6. **Old notes UI or mobile focus zoom after an update**: Reload the page or clear stale site assets; ensure the latest `notes/style.css` and `notes/app.js` were deployed
 
 ### Check Deployment Status:
 
@@ -109,6 +136,7 @@ Changes will be live within a few minutes.
    ```
 
 2. **Add sitemap.xml** for better SEO
+   - Include public portfolio content, not the private notes workspace
 
 3. **Optimize images** before uploading (compress them)
 
@@ -116,8 +144,10 @@ Changes will be live within a few minutes.
 
 ## Security
 
-- Never commit sensitive information (API keys, passwords)
-- Use environment variables for any secrets
+- Never commit passwords, access tokens, Google Client Secrets, Supabase secret keys, or service-role keys
+- Supabase's **publishable/anon key** is intentionally public and belongs in `notes/config.js`; row-level security must remain enabled
+- Store private authentication secrets in Supabase provider settings. Environment variables do not protect a secret if it is embedded in browser JavaScript
+- Do not commit exported vault JSON or screenshots containing private notes to this public repository
 - Keep dependencies updated
 
 ## Analytics (Optional)
