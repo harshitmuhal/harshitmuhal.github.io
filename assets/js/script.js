@@ -189,8 +189,9 @@ function initNavigation() {
     // Smooth scrolling for navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
-            e.preventDefault();
             const targetId = link.getAttribute('href');
+            if (!targetId || !targetId.startsWith('#')) return;
+            e.preventDefault();
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
