@@ -93,7 +93,33 @@ test("rich content rejects embeds and unsupported attributes", () => {
   assert.throws(() => validateVault(vault), /unsupported format/);
 });
 
-test("heading and checklist formatting survive a cloud save and reload", async () => {
+test("nested list content accepts Quill indent levels and rejects invalid levels", () => {
+  for (const list of ["bullet", "ordered", "checked", "unchecked"]) {
+    for (const indent of [1, 2, 8]) {
+      const content = {
+        ops: [
+          { insert: "Nested item" },
+          { insert: "\n", attributes: { list, indent } },
+        ],
+      };
+      assert.equal(validateContent(content), true);
+      assert.equal(contentText(content), "Nested item");
+    }
+  }
+  for (const indent of [-1, 0, 9, 1.5, "1", true, null]) {
+    assert.equal(
+      validateContent({
+        ops: [
+          { insert: "Invalid item" },
+          { insert: "\n", attributes: { list: "unchecked", indent } },
+        ],
+      }),
+      false
+    );
+  }
+});
+
+test("headings and nested lists and checklists survive a cloud save and reload", async () => {
   let row = null;
   const client = {
     from() {
@@ -121,6 +147,14 @@ test("heading and checklist formatting survive a cloud save and reload", async (
   await first.load();
   const content = contentFromText(
     "# Today\n- [x] Ship it\n\n## Tomorrow\n- [ ] Next step"
+  );
+  content.ops.push(
+    { insert: "Nested bullet" },
+    { insert: "\n", attributes: { list: "bullet", indent: 1 } },
+    { insert: "Nested task" },
+    { insert: "\n", attributes: { list: "unchecked", indent: 2 } },
+    { insert: "Completed subtask" },
+    { insert: "\n", attributes: { list: "checked", indent: 2 } }
   );
   first.data.notes.push({
     id: "note",

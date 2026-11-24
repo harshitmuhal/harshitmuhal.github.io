@@ -49,6 +49,13 @@ export function validateContent(content) {
           continue;
         if (key === "header" && [1, 2, 3].includes(value)) continue;
         if (
+          key === "indent" &&
+          Number.isInteger(value) &&
+          value >= 1 &&
+          value <= 8
+        )
+          continue;
+        if (
           key === "list" &&
           ["bullet", "ordered", "checked", "unchecked"].includes(value)
         )

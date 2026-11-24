@@ -97,6 +97,7 @@ The route is `https://harshitmuhal.github.io/notes/`, with local testing at `htt
 - **Folder** moves the current note. Its destination becomes the active folder, counts update, and the breadcrumb shows the note's actual folder even when browsing All notes.
 - **Text / Heading 1 / Heading 2 / Heading 3** formats content inside the editor; it does not change the note's folder or title.
 - The file title and content heading sizes are intentionally different. Inline checklist boxes toggle completion and strikethrough in the same note.
+- **Tab / Shift+Tab** nests or unnests list and checklist items. **Indent / Outdent** buttons also work on mobile. If indentation is missing, reload the latest editor code; both the editor and cloud-content validator must support the `indent` format. No database migration is required.
 
 ### Mobile Focus Zoom or a Missing Sidebar
 

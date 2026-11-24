@@ -636,7 +636,8 @@ p {
   border-radius: 3px;
 }
 #note-body .ql-editor .ql-ui[role="checkbox"] {
-  left: 0;
+  left: auto;
+  margin-left: -1.5em;
   top: 0;
   width: 1.5em;
   height: 1.6em;

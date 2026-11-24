@@ -66,6 +66,8 @@ Notes page: [https://harshitmuhal.github.io/notes/](https://harshitmuhal.github.
 
 Select or create a note in the file explorer. The **Folder** dropdown moves that note and updates the active folder and breadcrumb; the separate **Text / Heading** dropdown changes formatting inside the note. The note title is visually distinct from H1, H2, and H3 content headings. Mix paragraphs and multiple checklists in one note, and check an item to strike it through.
 
+Use **Tab / Shift+Tab** to nest or unnest list and checklist items, or use the **Indent / Outdent** toolbar buttons on mobile. Nesting is saved with your notes; checking a parent does not change its subtasks.
+
 **Continue with Google** requests account selection on each new Google sign-in. Sign out first to switch the site's account. Email sign-in remains available. Notes belong to your Supabase account, not to the browser's theme setting. The page and its source files are public; database policies protect each account's private note content.
 
 On mobile, the explorer is a drawer that closes when you select a note. Use the icon rail to reopen it or search. Editable fields use at least 16px text to avoid the small-text focus-zoom trigger, while pinch-to-zoom remains enabled. Sidebar open/closed state is preserved across layout changes.

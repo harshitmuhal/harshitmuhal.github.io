@@ -304,8 +304,39 @@ function initEditor() {
     theme: null,
     placeholder:
       "Start writing... Add a heading or a checklist whenever you need one.",
-    formats: ["header", "bold", "italic", "strike", "list"],
-    modules: { toolbar: "#format-toolbar", history: { userOnly: true } },
+    formats: ["header", "bold", "italic", "strike", "list", "indent"],
+    modules: {
+      toolbar: "#format-toolbar",
+      history: { userOnly: true },
+      keyboard: {
+        bindings: {
+          indent: {
+            handler(_range, context) {
+              if (
+                !context.format.list &&
+                context.collapsed &&
+                context.offset !== 0
+              )
+                return true;
+              this.quill.format("indent", "+1", "user");
+              return false;
+            },
+          },
+          outdent: {
+            handler(_range, context) {
+              if (
+                !context.format.list &&
+                context.collapsed &&
+                context.offset !== 0
+              )
+                return true;
+              this.quill.format("indent", "-1", "user");
+              return false;
+            },
+          },
+        },
+      },
+    },
   });
   richEditor.root.setAttribute("role", "textbox");
   richEditor.root.setAttribute("aria-label", "Note content");
