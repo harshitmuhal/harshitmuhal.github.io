@@ -14,18 +14,14 @@ const contactForm = document.getElementById('contactForm');
 
 // ===== PRELOADER =====
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        preloader.style.opacity = '0';
-        setTimeout(() => {
-            preloader.style.display = 'none';
-            isLoaded = true;
-            initializeAnimations();
-        }, 500);
-    }, 3000);
+    preloader.style.display = 'none';
+    isLoaded = true;
+    initializeAnimations();
 });
 
 // ===== PARTICLES.JS CONFIGURATION =====
 function initParticles() {
+    if (document.querySelector('.wizard-scene')) return;
     particlesJS('particles-js', {
         particles: {
             number: {
@@ -140,6 +136,11 @@ function initTypingEffect() {
         'Full Stack Developer',
         'Tech Innovation Leader'
     ];
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (typedTextElement) typedTextElement.textContent = texts[0];
+        return;
+    }
     
     let textIndex = 0;
     let charIndex = 0;
@@ -293,6 +294,7 @@ function initProjectFiltering() {
                     card.style.display = 'none';
                 }
             });
+            AOS.refresh();
         });
     });
 }
@@ -475,41 +477,7 @@ function initKeyboardNavigation() {
             navMenu.classList.remove('active');
         }
         
-        // Navigate sections with arrow keys
-        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-            e.preventDefault();
-            navigateSection(e.key === 'ArrowDown' ? 'next' : 'prev');
-        }
     });
-}
-
-function navigateSection(direction) {
-    const sections = Array.from(document.querySelectorAll('section[id]'));
-    const currentSection = sections.find(section => {
-        const rect = section.getBoundingClientRect();
-        return rect.top <= 100 && rect.bottom > 100;
-    });
-    
-    if (!currentSection) return;
-    
-    const currentIndex = sections.indexOf(currentSection);
-    let targetIndex;
-    
-    if (direction === 'next') {
-        targetIndex = currentIndex + 1;
-    } else {
-        targetIndex = currentIndex - 1;
-    }
-    
-    if (targetIndex >= 0 && targetIndex < sections.length) {
-        const targetSection = sections[targetIndex];
-        const offsetTop = targetSection.offsetTop - 80;
-        
-        window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-        });
-    }
 }
 
 // ===== SMOOTH SCROLLING FOR ALL LINKS =====
@@ -521,7 +489,7 @@ function initSmoothScrolling() {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const offsetTop = targetElement.offsetTop - 80;
+                const offsetTop = targetElement.getBoundingClientRect().top + window.scrollY - 80;
                 
                 window.scrollTo({
                     top: offsetTop,
@@ -564,7 +532,7 @@ function initPerformanceOptimizations() {
     // Preload critical resources
     const criticalResources = [
         'assets/css/style.css',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap'
+        'assets/css/wizard-theme.css'
     ];
     
     criticalResources.forEach(resource => {
@@ -635,12 +603,12 @@ window.addEventListener('error', (e) => {
 function initAccessibility() {
     // Add skip to main content link
     const skipLink = document.createElement('a');
-    skipLink.href = '#main';
+    skipLink.href = '#home';
     skipLink.textContent = 'Skip to main content';
     skipLink.className = 'skip-link';
     skipLink.style.cssText = `
         position: absolute;
-        top: -40px;
+        top: -100px;
         left: 6px;
         background: var(--primary-color);
         color: white;
@@ -656,7 +624,7 @@ function initAccessibility() {
     });
     
     skipLink.addEventListener('blur', () => {
-        skipLink.style.top = '-40px';
+        skipLink.style.top = '-100px';
     });
     
     document.body.insertBefore(skipLink, document.body.firstChild);
@@ -665,7 +633,6 @@ function initAccessibility() {
     const heroSection = document.querySelector('#home');
     if (heroSection) {
         heroSection.setAttribute('role', 'main');
-        heroSection.id = 'main';
     }
     
     // Improve focus management

@@ -1,5 +1,10 @@
 import { VaultStore } from "./vault.js";
-import { contentFromText, contentText, migrateLegacyTasks } from "./content.js";
+import {
+  contentFromText,
+  contentText,
+  isSafeLink,
+  migrateLegacyTasks,
+} from "./content.js";
 
 const $ = (id) => document.getElementById(id);
 let client;
@@ -295,6 +300,46 @@ function decorateChecklist() {
   }
 }
 
+function editLink() {
+  if (!ready) return;
+  let range = richEditor.getSelection(true);
+  if (range && !range.length) {
+    let [blot] = richEditor.getLeaf(range.index);
+    while (blot && blot.statics.blotName !== "link") blot = blot.parent;
+    if (blot)
+      range = { index: richEditor.getIndex(blot), length: blot.length() };
+  }
+  if (!range?.length) {
+    showError(
+      "Select the text you want to link, or place the cursor inside an existing link."
+    );
+    return;
+  }
+  const current = richEditor.getFormat(range).link;
+  const input = window.prompt(
+    "Enter an http:// or https:// URL. Leave blank to remove the link.",
+    typeof current === "string" ? current : "https://"
+  );
+  if (input === null) return;
+  const url = input.trim();
+  if (url && !isSafeLink(url)) {
+    showError(
+      "Enter a valid http:// or https:// URL. Other link types are not supported."
+    );
+    return;
+  }
+  richEditor.history.cutoff();
+  richEditor.formatText(
+    range.index,
+    range.length,
+    "link",
+    url || false,
+    "user"
+  );
+  richEditor.history.cutoff();
+  richEditor.setSelection(range.index, range.length, "silent");
+}
+
 function initEditor() {
   if (!window.Quill)
     throw new Error(
@@ -304,9 +349,12 @@ function initEditor() {
     theme: null,
     placeholder:
       "Start writing... Add a heading or a checklist whenever you need one.",
-    formats: ["header", "bold", "italic", "strike", "list", "indent"],
+    formats: ["header", "bold", "italic", "strike", "list", "indent", "link"],
     modules: {
-      toolbar: "#format-toolbar",
+      toolbar: {
+        container: "#format-toolbar",
+        handlers: { link: editLink },
+      },
       history: { userOnly: true },
       keyboard: {
         bindings: {
@@ -341,6 +389,25 @@ function initEditor() {
   richEditor.root.setAttribute("role", "textbox");
   richEditor.root.setAttribute("aria-label", "Note content");
   richEditor.root.setAttribute("aria-multiline", "true");
+  richEditor.root.addEventListener("click", (event) => {
+    const link = event.target.closest("a");
+    if (
+      !link ||
+      (!event.ctrlKey &&
+        !event.metaKey &&
+        event.pointerType !== "touch" &&
+        !window.matchMedia("(hover: none) and (pointer: coarse)").matches)
+    )
+      return;
+    event.preventDefault();
+    if (!isSafeLink(link.getAttribute("href"))) {
+      showError(
+        "This link cannot be opened. Only valid http:// and https:// URLs are supported."
+      );
+      return;
+    }
+    window.open(link.href, "_blank", "noopener,noreferrer");
+  });
   richEditor.on("editor-change", () => {
     if ($("text-style").selectedIndex < 0 && !richEditor.getSelection())
       $("text-style").value = "";

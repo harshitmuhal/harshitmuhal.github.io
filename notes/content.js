@@ -23,6 +23,21 @@ export function contentFromText(text) {
   return { ops };
 }
 
+export function isSafeLink(value) {
+  if (
+    typeof value !== "string" ||
+    !/^https?:\/\//i.test(value) ||
+    /[\u0000-\u0020\u007f]/.test(value)
+  )
+    return false;
+  try {
+    return ["http:", "https:"].includes(new URL(value).protocol);
+  } catch (error) {
+    if (error instanceof TypeError) return false;
+    throw error;
+  }
+}
+
 export function validateContent(content) {
   if (!content || !Array.isArray(content.ops) || !content.ops.length)
     return false;
@@ -48,6 +63,7 @@ export function validateContent(content) {
         )
           continue;
         if (key === "header" && [1, 2, 3].includes(value)) continue;
+        if (key === "link" && isSafeLink(value)) continue;
         if (
           key === "indent" &&
           Number.isInteger(value) &&

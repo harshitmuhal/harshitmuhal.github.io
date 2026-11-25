@@ -587,6 +587,11 @@ p {
 .ql-strike {
   text-decoration: line-through;
 }
+.format-toolbar .ql-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 .toolbar-divider {
   height: 17px;
   border-left: 1px solid var(--border);
@@ -611,6 +616,12 @@ p {
   margin: 14px 0 8px;
   line-height: 1.4;
   font-weight: 600;
+}
+#note-body .ql-editor a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
 }
 #note-body .ql-editor h1 {
   font-size: 24px;

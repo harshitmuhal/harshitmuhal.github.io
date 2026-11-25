@@ -7,6 +7,8 @@
     <meta name="description" content="Portfolio of Harshit Muhal - Software Engineer 2 at Microsoft, Expert at Codeforces, DTU'22 Graduate">
     <meta name="keywords" content="Software Engineer, Microsoft, Azure, Machine Learning, Full Stack Developer">
     <meta name="author" content="Harshit Muhal">
+    <meta name="theme-color" content="#080f16">
+    <noscript><style>[data-aos] { opacity: 1 !important; transform: none !important; }</style></noscript>
     
     <!-- Favicons (optional - comment out if no favicon file) -->
     <!-- <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> -->
@@ -14,7 +16,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,8 +38,8 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
+            background: #080f16;
+            color: #eee5d3;
             line-height: 1.6;
         }
         
@@ -45,7 +47,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(8, 15, 22, 0.97);
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
@@ -55,7 +57,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            background: #080f16;
             text-align: center;
             padding: 0 1rem;
         }
@@ -71,6 +73,9 @@
             display: none !important;
         }
     </style>
+    <link rel="stylesheet" href="./assets/css/wizard-theme.css">
+    <link rel="stylesheet" href="./assets/css/wizard-magic.css">
+    <script src="./assets/js/wizard-magic.js" defer></script>
     
     <!-- Fallback CSS loading for GitHub Pages -->
     <script>
@@ -114,6 +119,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
+                <span class="wizard-monogram" aria-hidden="true">HM</span>
                 <span class="logo-text">Harshit</span>
             </div>
             <ul class="nav-menu" id="nav-menu">
@@ -152,9 +158,62 @@
             </div>
         </div>
     </nav>
+    <nav class="chapter-rail" aria-label="Portfolio chapters">
+        <a href="#home" aria-label="Prologue: Home" aria-current="location"><span>00</span></a>
+        <a href="#about" aria-label="Chapter one: About"><span>01</span></a>
+        <a href="#experience" aria-label="Chapter two: Experience"><span>02</span></a>
+        <a href="#projects" aria-label="Chapter three: Projects"><span>03</span></a>
+        <a href="#skills" aria-label="Chapter four: Skills"><span>04</span></a>
+        <a href="#publications" aria-label="Chapter five: Research"><span>05</span></a>
+        <a href="#achievements" aria-label="Chapter six: Achievements"><span>06</span></a>
+        <a href="#contact" aria-label="Chapter seven: Contact"><span>07</span></a>
+    </nav>
+    <div class="reading-progress" aria-hidden="true"></div>
 
     <!-- Particle Background -->
     <div id="particles-js"></div>
+
+    <div class="enchanted-sky" aria-hidden="true">
+        <div class="snitch-flight">
+            <svg viewBox="0 0 160 75" focusable="false">
+                <defs><radialGradient id="chase-gold" cx=".35" cy=".3"><stop stop-color="#fff5bd"/><stop offset=".5" stop-color="#dfb64e"/><stop offset="1" stop-color="#77511d"/></radialGradient></defs>
+                <g class="chase-wing chase-wing-left" fill="#eee3bb" stroke="#b59d65" stroke-width=".7">
+                    <path d="M67 37C47 9 22 17 2 4c9 20 24 24 35 28-15-2-22-3-31 0 20 14 39 15 61 12Z"/>
+                    <path d="m16 17 46 21M20 34l43 7" fill="none"/>
+                </g>
+                <g class="chase-wing chase-wing-right" fill="#eee3bb" stroke="#b59d65" stroke-width=".7">
+                    <path d="M93 37c20-28 45-20 65-33-9 20-24 24-35 28 15-2 22-3 31 0-20 14-39 15-61 12Z"/>
+                    <path d="m144 17-46 21m42-4-43 7" fill="none"/>
+                </g>
+                <circle cx="80" cy="40" r="16" fill="url(#chase-gold)" stroke="#f5d992"/>
+                <ellipse cx="80" cy="40" rx="8" ry="15" fill="none" stroke="#916628"/>
+                <path d="M65 38h30m-25 9 10-17 10 17" fill="none" stroke="#916628"/>
+            </svg>
+        </div>
+        <div class="wizard-flight">
+            <svg viewBox="0 0 260 140" focusable="false">
+                <g class="broom-sparks" fill="#f2d794">
+                    <circle cx="10" cy="103" r="2"/><circle cx="25" cy="87" r="1.5"/><circle cx="4" cy="78" r="1"/>
+                    <path d="m35 100-30 6m37-15L8 92m32 4L0 99" stroke="#e9b55d" stroke-width="2"/>
+                </g>
+                <g class="flying-wizard">
+                    <path d="m40 97 175-15" stroke="#a87840" stroke-width="5" stroke-linecap="round"/>
+                    <path d="m57 91-25-3-7 22 32-9m-18-9-8 13m17-12-10 12" fill="#b78c4d" stroke="#6e492d" stroke-width="2"/>
+                    <path class="wizard-cloak" d="M130 57c-22-9-34 2-48 18L47 77l42 19 43-12 16-14Z" fill="#742f36" stroke="#e7b866" stroke-width="1"/>
+                    <path d="m128 77 19 15-8 25h13l9-29-17-15" fill="#18242d" stroke="#e7b866" stroke-width="1"/>
+                    <path class="wizard-arm" d="m136 59 19 14 22-13" fill="none" stroke="#d5b17d" stroke-width="7" stroke-linecap="round"/>
+                    <circle cx="139" cy="45" r="11" fill="#deb989"/>
+                    <path d="m116 39 36-4-16-30-8 22Z" fill="#192b3a" stroke="#d6b267" stroke-width="1.5"/>
+                    <path d="m172 61 19-17" stroke="#d9bf85" stroke-width="2"/>
+                    <path d="m193 32 2 9 9 3-9 2-2 9-2-9-9-2 9-3Z" fill="#fff1b1"/>
+                </g>
+            </svg>
+        </div>
+        <div id="spell-trail"></div>
+    </div>
+    <button id="magic-toggle" class="magic-toggle" type="button" aria-pressed="false" hidden>
+        Pause magic
+    </button>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -177,12 +236,13 @@
                 
                 <div class="hero-main">
                     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
-                        <span class="greeting">Hi, I'm</span>
+                        <span class="greeting">ENGINEERING / IMAGINATION / IMPACT</span>
                         <span class="name-wrapper">
-                            <span class="name">Harshit Muhal</span>
+                            <span class="name"><span>Harshit</span> <em>Muhal.</em></span>
                             <div class="name-underline"></div>
                         </span>
                     </h1>
+                    <p class="hero-manifesto">Engineering the extraordinary.</p>
                     
                     <div class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">
                         <span class="role-prefix">I am a</span>
@@ -218,7 +278,7 @@
                     <div class="hero-buttons" data-aos="fade-up" data-aos-delay="1200">
                         <a href="#contact" class="btn btn-primary btn-glow">
                             <span class="btn-content">
-                                <span>Get In Touch</span>
+                                <span>Let's make something matter</span>
                                 <i class="fas fa-arrow-right"></i>
                             </span>
                             <div class="btn-shine"></div>
@@ -232,6 +292,13 @@
                     </div>
                 </div>
                 
+                <div class="wizard-scene" aria-hidden="true">
+                    <img class="cinema-castle" src="./assets/images/midnight-castle.svg" alt="" width="1600" height="1100" fetchpriority="high">
+                    <div class="floating-candles">
+                        <span class="floating-candle"></span><span class="floating-candle"></span><span class="floating-candle"></span>
+                    </div>
+                </div>
+
                 <div class="hero-tech-showcase" data-aos="fade-up" data-aos-delay="1400">
                     <div class="tech-grid">
                         <div class="tech-card microsoft" data-aos="flip-left" data-aos-delay="1500">
@@ -279,24 +346,79 @@
                     </div>
                 </div>
             </div>
+            <a class="begin-journey" href="#about"><span>SCROLL TO BEGIN THE STORY</span><span aria-hidden="true">&darr;</span></a>
         </div>
     </section>
             </div>
         </div>
     </section>
 
+    <template id="chamber-art">
+                        <svg viewBox="0 0 440 280" aria-hidden="true" focusable="false">
+                            <defs>
+                                <radialGradient id="chamber-light"><stop stop-color="#a9ffd0"/><stop offset=".35" stop-color="#36b997"/><stop offset="1" stop-color="#0a1c1c"/></radialGradient>
+                            </defs>
+                            <ellipse class="chamber-aura" cx="220" cy="160" rx="115" ry="110" fill="url(#chamber-light)"/>
+                            <path d="M90 264V132a130 130 0 0 1 260 0v132" fill="none" stroke="#455851" stroke-width="22"/>
+                            <path d="M100 264V132a120 120 0 0 1 240 0v132" fill="none" stroke="#92a18a" stroke-width="2"/>
+                            <g stroke="#6d7f6d" stroke-width="2" fill="none" opacity=".55">
+                                <path d="m110 77 28 15m30-65 12 30m40-47v30m52-13-12 30m70 20-28 15M80 151h25m-25 43h25m230-43h25m-25 43h25"/>
+                            </g>
+                            <g class="chamber-door chamber-door-left">
+                                <path d="M112 264V133A108 108 0 0 1 220 25v239Z" fill="#243b35" stroke="#788c73"/>
+                                <path d="M164 239c-56-34 48-57 9-88s-39-54-4-65c33-10 39 26 15 27" fill="none" stroke="#9aac8a" stroke-width="13" stroke-linecap="round"/>
+                                <path d="m174 107 21-12-1 18-17 8Z" fill="#aebe99"/>
+                                <circle class="serpent-eye" cx="187" cy="109" r="3" fill="#c7ff9a"/>
+                            </g>
+                            <g class="chamber-door chamber-door-right">
+                                <path d="M220 25a108 108 0 0 1 108 108v131H220Z" fill="#243b35" stroke="#788c73"/>
+                                <path d="M276 239c56-34-48-57-9-88s39-54 4-65c-33-10-39 26-15 27" fill="none" stroke="#9aac8a" stroke-width="13" stroke-linecap="round"/>
+                                <path d="m266 107-21-12 1 18 17 8Z" fill="#aebe99"/>
+                                <circle class="serpent-eye" cx="253" cy="109" r="3" fill="#c7ff9a"/>
+                            </g>
+                            <path d="M72 266h296" stroke="#9daa8b" stroke-width="3"/>
+                            <g class="chamber-runes" fill="#91deaa"><circle cx="220" cy="171" r="4"/><path d="m220 192-5 9 5 9 5-9Zm0-43-5-9 5-9 5 9Z"/></g>
+                        </svg>
+    </template>
+    <template id="cup-art">
+                        <svg viewBox="0 0 440 280" aria-hidden="true" focusable="false">
+                            <defs>
+                                <radialGradient id="cup-light"><stop stop-color="#81dfff" stop-opacity=".6"/><stop offset="1" stop-color="#0b1727" stop-opacity="0"/></radialGradient>
+                                <linearGradient id="cup-silver"><stop stop-color="#597a8e"/><stop offset=".35" stop-color="#e1f3f5"/><stop offset=".6" stop-color="#8dbecc"/><stop offset="1" stop-color="#365873"/></linearGradient>
+                            </defs>
+                            <ellipse class="cup-aura" cx="220" cy="145" rx="155" ry="125" fill="url(#cup-light)"/>
+                            <ellipse cx="220" cy="256" rx="82" ry="10" fill="#72cfff" opacity=".12"/>
+                            <g class="cup-flames" fill="none" stroke-linecap="round">
+                                <path d="M175 137c-52-54 29-65-5-112 83 40-6 69 37 108" stroke="#63c9ff" stroke-width="4"/>
+                                <path d="M244 136c47-37-15-57 22-102-7 52 47 39 10 101" stroke="#70dfff" stroke-width="3"/>
+                                <path d="M218 124c-31-50 17-64 4-106 48 48-2 60 17 106" stroke="#c2faff" stroke-width="5"/>
+                            </g>
+                            <g class="tournament-cup" fill="url(#cup-silver)" stroke="#b6dce7" stroke-width="1.5">
+                                <path d="M169 112c-52-32-53 34-10 49l24 2-5-14c-29 1-49-33-16-24Zm102 0c52-32 53 34 10 49l-24 2 5-14c29 1 49-33 16-24Z"/>
+                                <path d="m195 109 25-32 25 32-9 6-16-17-16 17Z"/>
+                                <path d="M164 108h112l-18 58-27 21v39h26l14 17H169l14-17h26v-39l-27-21Z"/>
+                                <ellipse cx="220" cy="108" rx="56" ry="9" fill="#24475e"/>
+                                <path d="m194 129 26 9 26-9-10 33-16 13-16-13Z" fill="#2a6179"/>
+                                <path d="m220 144 6 9-6 12-6-12Z" fill="#c8faff"/>
+                                <path d="M181 237h78M214 190v30" fill="none"/>
+                            </g>
+                            <g class="cup-orbit" fill="#97e9ff"><circle cx="125" cy="125" r="2"/><circle cx="309" cy="111" r="3"/><circle cx="285" cy="205" r="2"/><path d="m144 196 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/></g>
+                        </svg>
+    </template>
+
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about magic-chapter" data-chapter="I">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">Passionate Software Engineer Building the Future</p>
+                <h2 class="section-title">A little curiosity.<br><em>A different kind of magic.</em></h2>
+                <p class="section-subtitle">Behind the code, a relentless desire to understand how things work.</p>
             </div>
             
             <div class="about-hero" data-aos="fade-up" data-aos-delay="200">
                 <div class="about-card">
                     <div class="card-glow"></div>
                     <div class="about-intro">
+                        <div class="dossier-label">THE ENGINEER'S DOSSIER <span aria-hidden="true">/ FILE HM-01</span></div>
                         <div class="intro-badge">
                             <i class="fab fa-microsoft"></i>
                             <span>Microsoft Software Engineer</span>
@@ -420,10 +542,10 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <section id="experience" class="experience magic-chapter" data-chapter="II">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Professional Experience</h2>
+                <h2 class="section-title">Built at scale.<br><em>Made to matter.</em></h2>
                 <p class="section-subtitle">Building scalable solutions that impact millions</p>
             </div>
             
@@ -646,11 +768,15 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects magic-chapter" data-chapter="III">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Some of my notable work and research</p>
+            <div class="section-header integrated-heading chamber-heading" data-aos="fade-up">
+                <div id="chamber-scene" class="chamber-scene chapter-art" role="img" aria-label="A serpent-guarded entrance to the project archive"></div>
+                <div class="chapter-heading-copy">
+                <h2 class="section-title">Every idea<br>begins with <em>a spark.</em></h2>
+                <p class="section-subtitle">The project chamber. Six experiments in turning possibility into something real.</p>
+                <a id="chamber-enter" class="chapter-link" href="#project-spellbook">Enter the project chamber <span aria-hidden="true">&rarr;</span></a>
+                </div>
             </div>
             <div class="projects-filter" data-aos="fade-up">
                 <button class="filter-btn active" data-filter="all">All</button>
@@ -658,7 +784,7 @@
                 <button class="filter-btn" data-filter="web">Web Development</button>
                 <button class="filter-btn" data-filter="cv">Computer Vision</button>
             </div>
-            <div class="projects-grid">
+            <div id="project-spellbook" class="projects-grid" tabindex="-1">
                 <div class="project-card" data-category="ml" data-aos="fade-up">
                     <div class="project-visual">
                         <div class="project-gradient gradient-ml">
@@ -905,11 +1031,27 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills magic-chapter" data-chapter="IV">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">Core technologies I work with</p>
+                <button id="snitch-toggle" class="snitch-catch" type="button" aria-pressed="false" aria-label="Catch the golden snitch" hidden>
+                    <svg class="golden-snitch" viewBox="0 0 300 110" aria-hidden="true" focusable="false">
+                        <defs><radialGradient id="snitch-gold" cx=".35" cy=".3"><stop stop-color="#fff5bd"/><stop offset=".5" stop-color="#dbac49"/><stop offset="1" stop-color="#77511d"/></radialGradient></defs>
+                        <g class="snitch-wing snitch-wing-left" fill="#eadbb3" stroke="#b59d65" stroke-width="1">
+                            <path d="M132 55C104 5 54 18 10 5c20 22 49 24 65 34-28-4-40-8-53-5 24 18 47 15 68 23-22-2-36 0-48 5 35 17 61 10 90 6Z"/>
+                            <path d="M30 16c43 19 70 17 97 43M49 40l77 22M61 62l65 3" fill="none"/>
+                        </g>
+                        <g class="snitch-wing snitch-wing-right" fill="#eadbb3" stroke="#b59d65" stroke-width="1">
+                            <path d="M168 55c28-50 78-37 122-50-20 22-49 24-65 34 28-4 40-8 53-5-24 18-47 15-68 23 22-2 36 0 48 5-35 17-61 10-90 6Z"/>
+                            <path d="M270 16c-43 19-70 17-97 43m78-19-77 22m65 0-65 3" fill="none"/>
+                        </g>
+                        <circle cx="150" cy="61" r="24" fill="url(#snitch-gold)" stroke="#f5d992"/>
+                        <g fill="none" stroke="#916628"><ellipse cx="150" cy="61" rx="13" ry="23"/><path d="M127 57h46m-43 15 19-25 20 25"/></g>
+                    </svg>
+                    <span id="snitch-label">Catch the snitch</span>
+                </button>
+                <h2 class="section-title">Practice becomes<br><em>instinct.</em></h2>
+                <p class="section-subtitle">Every spell takes practice. These are the tools behind mine.</p>
             </div>
             <div class="skills-compact">
                 <div class="skill-tags" data-aos="fade-up">
@@ -959,10 +1101,11 @@
     </section>
 
     <!-- Publications & Research Section -->
-    <section id="publications" class="publications">
+    <section id="publications" class="publications magic-chapter" data-chapter="V">
         <div class="container">
             <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Research & Publications</h2>
+                <div class="library-books" aria-hidden="true"><span></span><span></span><span></span></div>
+                <h2 class="section-title">Curiosity,<br><em>committed to paper.</em></h2>
                 <p class="section-subtitle">Contributing to the advancement of technology through research</p>
             </div>
             <div class="publications-grid">
@@ -1088,11 +1231,15 @@
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="achievements">
+    <section id="achievements" class="achievements magic-chapter" data-chapter="VI">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Achievements & Recognition</h2>
+            <div class="section-header integrated-heading trophy-heading" data-aos="fade-up">
+                <div id="cup-scene" class="cup-scene chapter-art" role="img" aria-label="The Triwizard Cup celebrating the awards and achievements below"></div>
+                <div class="chapter-heading-copy">
+                <h2 class="section-title">The work.<br><em>The recognition.</em></h2>
                 <p class="section-subtitle">Awards, academic excellence, and competitive programming accomplishments</p>
+                <span class="trophy-inscription">THE TRIWIZARD TROPHY CABINET</span>
+                </div>
             </div>
             <div class="achievements-grid">
                 <!-- Professional Awards -->
@@ -1255,11 +1402,35 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact magic-chapter" data-chapter="VII">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's connect and discuss opportunities</p>
+            <div class="section-header integrated-heading owl-heading" data-aos="fade-up">
+                <div class="hedwig-perch chapter-art" aria-hidden="true">
+                    <svg class="hedwig" viewBox="0 0 300 240" focusable="false">
+                        <ellipse cx="150" cy="218" rx="76" ry="7" fill="#0004"/>
+                        <path d="M76 207h148" stroke="#a58b5c" stroke-width="5" stroke-linecap="round"/>
+                        <g class="owl-body">
+                            <path d="M150 76c-70-2-72 105-35 127h70c37-22 35-129-35-127Z" fill="#dedfd9" stroke="#afbbb9"/>
+                            <path class="owl-wing owl-wing-left" d="M109 97C73 117 71 171 99 191c-1-31 16-43 27-66Z" fill="#f2f1e8" stroke="#aab7b4"/>
+                            <path class="owl-wing owl-wing-right" d="M191 97c36 20 38 74 10 94 1-31-16-43-27-66Z" fill="#f2f1e8" stroke="#aab7b4"/>
+                            <g fill="none" stroke="#8f9e9c" stroke-width="2"><path d="m124 144 6 3m40-3 6 3m-45 16 6 3m26-3 6 3m-25 16 6 3m6-3 6 3"/></g>
+                            <g class="owl-head">
+                                <path d="M97 86c-15-57 18-65 53-58 35-7 68 1 53 58-9 24-27 30-53 28-26 2-44-4-53-28Z" fill="#f5f4ed" stroke="#bac5bf"/>
+                                <path d="M105 53c22-13 34-9 45 4 11-13 23-17 45-4" fill="none" stroke="#d5d9d0" stroke-width="5"/>
+                                <g class="owl-eyes"><circle cx="127" cy="73" r="13" fill="#e5c968"/><circle cx="173" cy="73" r="13" fill="#e5c968"/><circle cx="127" cy="73" r="6" fill="#19282c"/><circle cx="173" cy="73" r="6" fill="#19282c"/><circle cx="130" cy="69" r="2" fill="#fff"/><circle cx="176" cy="69" r="2" fill="#fff"/></g>
+                                <path d="m144 89 6 12 6-12Z" fill="#6b7470"/>
+                                <path d="m105 41 5 4m15-11 5 4m40-4 5 4m15 3 5 4" stroke="#a6b0a7" stroke-width="2"/>
+                            </g>
+                            <path d="m119 199 4 12m6-12 3 12m36-12 3 12m7-12 3 12" stroke="#c5ac72" stroke-width="4" stroke-linecap="round"/>
+                            <g class="owl-letter"><path d="M121 133h58v41h-58Z" fill="#e7d6ac" stroke="#bda06a"/><path d="m121 133 29 23 29-23m-58 41 22-23m36 23-22-23" fill="none" stroke="#bda06a"/><circle cx="150" cy="155" r="7" fill="#883d38"/></g>
+                        </g>
+                    </svg>
+                </div>
+                <div class="chapter-heading-copy">
+                <h2 class="section-title">Great things start<br><em>with a conversation.</em></h2>
+                <p class="section-subtitle">Hedwig is on letter duty. Let's talk ideas, opportunities, and a little engineering magic.</p>
+                <button id="owl-post" class="chapter-link" type="button" hidden>Write a letter <span aria-hidden="true">&rarr;</span></button>
+                </div>
             </div>
             <div class="contact-content">
                 <div class="contact-info" data-aos="fade-right">

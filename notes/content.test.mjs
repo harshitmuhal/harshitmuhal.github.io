@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   contentFromText,
   contentText,
+  isSafeLink,
   migrateLegacyTasks,
   validateContent,
 } from "./content.js";
@@ -93,6 +94,42 @@ test("rich content rejects embeds and unsupported attributes", () => {
   assert.throws(() => validateVault(vault), /unsupported format/);
 });
 
+test("hyperlinks accept valid web URLs and reject unsafe or malformed targets", () => {
+  for (const link of [
+    "https://example.com/path?q=notes#section",
+    "http://localhost:8000/notes/",
+  ]) {
+    const content = {
+      ops: [
+        { insert: "Linked text", attributes: { link, bold: true } },
+        { insert: "\n" },
+      ],
+    };
+    assert.equal(isSafeLink(link), true);
+    assert.equal(validateContent(content), true);
+    assert.equal(contentText(content), "Linked text");
+  }
+  for (const link of [
+    "javascript:alert(1)",
+    "data:text/html,test",
+    "mailto:test@example.com",
+    "//example.com",
+    "https://",
+    "https://example.com/\npath",
+    "",
+    1,
+    null,
+  ]) {
+    assert.equal(isSafeLink(link), false);
+    assert.equal(
+      validateContent({
+        ops: [{ insert: "Text", attributes: { link } }, { insert: "\n" }],
+      }),
+      false
+    );
+  }
+});
+
 test("nested list content accepts Quill indent levels and rejects invalid levels", () => {
   for (const list of ["bullet", "ordered", "checked", "unchecked"]) {
     for (const indent of [1, 2, 8]) {
@@ -119,7 +156,7 @@ test("nested list content accepts Quill indent levels and rejects invalid levels
   }
 });
 
-test("headings and nested lists and checklists survive a cloud save and reload", async () => {
+test("headings, hyperlinks and nested checklists survive a cloud save and reload", async () => {
   let row = null;
   const client = {
     from() {
@@ -154,7 +191,12 @@ test("headings and nested lists and checklists survive a cloud save and reload",
     { insert: "Nested task" },
     { insert: "\n", attributes: { list: "unchecked", indent: 2 } },
     { insert: "Completed subtask" },
-    { insert: "\n", attributes: { list: "checked", indent: 2 } }
+    { insert: "\n", attributes: { list: "checked", indent: 2 } },
+    {
+      insert: "Project page",
+      attributes: { link: "https://example.com/project", bold: true },
+    },
+    { insert: "\n", attributes: { list: "unchecked", indent: 1 } }
   );
   first.data.notes.push({
     id: "note",

@@ -1,6 +1,6 @@
 # Image Assets
 
-This folder is reserved for portfolio image assets. It currently contains this guide, not the optional image files listed below. The current portfolio uses CSS/icon-based visuals rather than `<img>` elements.
+This folder contains `midnight-castle.svg`, an original panoramic illustration used by the portfolio's cinematic hero, and this guide. The SVG is decorative (`alt=""`), has explicit dimensions, and is included in the portfolio service-worker cache. Its sky, mountains, towers, windows, bridge, and lake are original vector artwork, not downloaded franchise imagery. Other portfolio motifs use inline SVG and CSS.
 
 The `/notes/` page uses inline SVG icons, a text Google sign-in mark, and the Quill editor; it does not require images in this folder. Notes UI assets live under `notes/`; see [the notes setup guide](../../notes/SETUP.md).
 
@@ -22,7 +22,7 @@ If you extend the portfolio with photos or project screenshots, these filenames 
 
 ## Image Guidelines
 
-- **Format**: JPG or PNG
+- **Format**: SVG for original vector illustrations; JPG or PNG for photos and screenshots
 - **Size**: Optimize for web (under 500KB each)
 - **Dimensions**: 
   - Project images: 600x400px (3:2 aspect ratio)

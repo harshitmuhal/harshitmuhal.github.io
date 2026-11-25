@@ -4,9 +4,11 @@ A static portfolio website showcasing the professional journey and achievements 
 
 ## 🌟 Features
 
-- **Modern Design**: Clean, professional design with smooth animations and modern UI/UX
-- **Responsive Layout**: Responsive portfolio layout and a mobile file-explorer drawer for notes
-- **Interactive Elements**: Particle background, typing effects, smooth scrolling, and hover animations
+- **Cinematic wizarding-inspired design**: A panoramic original moonlit castle, monumental editorial typography, dark chapter scenes, parchment details, and antique gold; no borrowed franchise images or logos
+- **Animated magic throughout**: Midnight castle sky, floating candles, a wizard chasing a roaming golden snitch along a shared looping route, and a bounded spell trail. The wizard follows the snitch with a short delay, banking and reversing when it doubles back. The project archive uses the serpent chamber, real achievements have a blue-flame Triwizard Cup, skills feature a separate catchable golden snitch, and Hedwig's Owl Post leads into the contact form. Use **Pause magic** to stop decorative loops; reduced-motion preferences disable them automatically.
+- **Responsive Layout**: Height-aware hero typography and spacing keep the contact/CV actions above the fold at common desktop viewport sizes, with the actions before the statistics. Very small screens retain readable, scrollable content rather than clipping it. Notes have an independent mobile file-explorer drawer.
+- **Chapter navigation**: An active chapter rail on desktop and a native CSS reading-progress line where supported. Scrolling and arrow keys retain normal browser behavior; there is no artificial loading delay.
+- **Interactive Elements**: Typing effects, smooth scrolling, hover animations, and reduced-motion styling
 - **Performance Optimized**: Fast loading with optimized assets and lazy loading
 - **SEO Friendly**: Proper meta tags and semantic HTML structure
 - **Accessibility**: Labeled notes controls and keyboard-operable checklist items
@@ -22,7 +24,7 @@ Notes page: [https://harshitmuhal.github.io/notes/](https://harshitmuhal.github.
 
 ## 📱 Sections
 
-- **Hero Section**: Animated introduction with particle background
+- **Hero Section**: Professional introduction with an original, decorative wizarding castle illustration
 - **About**: Professional summary with animated statistics
 - **Experience**: Interactive timeline of career progression at Microsoft
 - **Projects**: Filterable portfolio of technical projects
@@ -35,9 +37,9 @@ Notes page: [https://harshitmuhal.github.io/notes/](https://harshitmuhal.github.
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Animations**: AOS (Animate On Scroll), Custom CSS animations
-- **Particles**: Particles.js for background effects
+- **Particles**: Legacy Particles.js support is retained but disabled in the castle theme
 - **Icons**: Font Awesome 6
-- **Fonts**: Inter (Google Fonts)
+- **Fonts**: Inter and Cormorant Garamond (Google Fonts), with local fallback fonts
 - **Deployment**: GitHub Pages
 - **Notes editor**: Quill 2, with rich text stored as text operations rather than executable HTML
 - **Authentication and notes database**: Supabase Auth and Postgres with row-level security
@@ -68,6 +70,8 @@ Select or create a note in the file explorer. The **Folder** dropdown moves that
 
 Use **Tab / Shift+Tab** to nest or unnest list and checklist items, or use the **Indent / Outdent** toolbar buttons on mobile. Nesting is saved with your notes; checking a parent does not change its subtasks.
 
+Select text and use the chain-link button to add a web URL. Use it inside an existing link to edit the URL, or leave the URL blank to remove it. Ctrl/Cmd-click to open links on desktop, or tap them on touch devices. Links support `http://` and `https://` and sync with your notes.
+
 **Continue with Google** requests account selection on each new Google sign-in. Sign out first to switch the site's account. Email sign-in remains available. Notes belong to your Supabase account, not to the browser's theme setting. The page and its source files are public; database policies protect each account's private note content.
 
 On mobile, the explorer is a drawer that closes when you select a note. Use the icon rail to reopen it or search. Editable fields use at least 16px text to avoid the small-text focus-zoom trigger, while pinch-to-zoom remains enabled. Sidebar open/closed state is preserved across layout changes.
@@ -92,9 +96,15 @@ node --test notes\vault.test.mjs notes\content.test.mjs notes\theme.test.mjs
 
 ### Styling
 - Main styles are in `assets/css/style.css`
+- The main portfolio loads `assets/css/wizard-theme.css` after the base and fallback styles for shared colors, typography, and components. `assets/css/wizard-magic.css` supplies the cinematic composition: the original panoramic artwork is `assets/images/midnight-castle.svg`, with transform/opacity-based atmosphere layered over it. The notes workspace does not load these themes.
+- `assets/css/wizard-magic.css` and `assets/js/wizard-magic.js` carry the theme through every portfolio chapter: a parchment dossier, career milestones, a serpent-guarded project archive, snitch-lit skills, book-spine research cards, a trophy cabinet, and owl-post stationery. Chamber/cup SVG templates are mounted into their relevant section headings; there is no separate relic showcase. Projects and awards stay directly accessible. Hedwig's **Write a letter** action focuses the existing name field and does not send a message. All illustrations are original SVG; chapter animations pause offscreen and in background tabs, pointer trails use a fixed pool of 16 sparks, and no new animation libraries or remote image assets are required. These effects do not run in `/notes/`.
 - CSS variables in `:root` for easy theme customization
 - Responsive breakpoints for different screen sizes
 - Notes have standalone styles in `notes/style.css`; light/dark colors are CSS variables, and `notes/theme.js` restores the browser's theme preference
+
+The cinematic direction was developed through three visual studies: an enchanted archive, a celestial atlas, and a moonlit landscape. The landscape direction was selected, with the archive's editorial restraint. Research references were [Codrops' discussion of cinematic rhythm and hierarchy](https://tympanus.net/codrops/2026/06/23/podium-building-a-website-where-running-becomes-storytelling/), [web.dev's performant animation guidance](https://web.dev/articles/animations-guide), and [MDN's scroll-driven animation guidance](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations/Timelines). These informed principles, not copied source code or visual assets.
+
+The wizard/snitch chase uses two compositor-driven Web Animations API animations on the same viewport-relative route with a 950ms lead for the snitch. Resizing rebuilds the two animations while retaining their phase; pause, background-tab, and reduced-motion changes are handled explicitly. It does not use a JavaScript frame loop or intercept clicks.
 
 ### Adding Projects
 ```html
