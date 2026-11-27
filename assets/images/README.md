@@ -4,13 +4,17 @@ This folder contains `midnight-castle.svg`, an original panoramic illustration u
 
 The `/notes/` page uses inline SVG icons, a text Google sign-in mark, and the Quill editor; it does not require images in this folder. Notes UI assets live under `notes/`; see [the notes setup guide](../../notes/SETUP.md).
 
+`favicon.svg` is the main portfolio's original dark-and-gold HM browser-tab monogram with a small lightning accent. It uses vector paths rather than a font or a franchise logo.
+
+`name-wordmark.svg` contains original mixed-case lettering for the homepage name, with pinched stems, pointed letter crowns, a sweeping H crossbar, and a long lightning-shaped M downstroke. Static SVG lighting, edge facets, and offset bronze sides create a carved-metal finish instead of flat gold. The initials remain H/M, not H/P. It replaces the experimental fan-font and block-capital treatments and has the accessible alternative text "Harshit Muhal" in `index.html`.
+
 ## Optional Images
 
 If you extend the portfolio with photos or project screenshots, these filenames are suggestions rather than existing or required assets:
 
 ### Profile Images
 - `profile.jpg` - Your professional headshot (400x400px recommended)
-- `favicon.ico` - Website favicon (32x32px); the link in the root `index.html` is currently commented out, so enable it only after adding the file
+- `favicon.ico` - Optional legacy-browser fallback; the current main page uses the existing `favicon.svg`
 
 ### Project Images
 - `image-captioning.jpg` - Screenshot or illustration for Image Captioning project

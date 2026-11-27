@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1110" height="270" viewBox="0 0 1110 270">
+  <defs>
+    <filter id="fine-cut" x="-5%" y="-5%" width="110%" height="110%">
+      <feMorphology in="SourceAlpha" operator="erode" radius="1.2" result="slender"/>
+      <feComposite in="SourceGraphic" in2="slender" operator="in"/>
+    </filter>
+    <filter id="carved-metal" x="-5%" y="-5%" width="110%" height="110%" color-interpolation-filters="sRGB">
+      <feMorphology in="SourceAlpha" operator="erode" radius="1.2" result="shape"/>
+      <feComposite in="SourceGraphic" in2="shape" operator="in" result="face"/>
+      <feGaussianBlur in="shape" stdDeviation="1.1" result="surface"/>
+      <feSpecularLighting in="surface" surfaceScale="7" specularConstant="1.1" specularExponent="18" lighting-color="#fff5d6" result="reflection">
+        <feDistantLight azimuth="225" elevation="48"/>
+      </feSpecularLighting>
+      <feComposite in="reflection" in2="shape" operator="in" result="bevel"/>
+      <feComposite in="face" in2="bevel" operator="arithmetic" k1="0" k2="1" k3=".9" k4="0"/>
+    </filter>
+    <linearGradient id="gold" x1="0" y1="10" x2="0" y2="245" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ead9a6"/><stop offset=".17" stop-color="#b29457"/>
+      <stop offset=".32" stop-color="#49371d"/><stop offset=".41" stop-color="#d2b776"/>
+      <stop offset=".46" stop-color="#f0ddaa"/><stop offset=".52" stop-color="#624620"/>
+      <stop offset=".69" stop-color="#9b763b"/><stop offset=".86" stop-color="#cbb174"/>
+      <stop offset="1" stop-color="#735022"/>
+    </linearGradient>
+    <linearGradient id="metal-side"><stop stop-color="#322719"/><stop offset=".5" stop-color="#ad8747"/><stop offset="1" stop-color="#443019"/></linearGradient>
+    <g id="cap-h">
+      <path d="m10 24 33-12-8 15-2 78 2 92 11 12-35 10 9-17v-78l-3-89Z"/>
+      <path d="m77 14 35-10-10 17-5 87 2 95 13 12-35 3 8-19-1-79 2-96Z"/>
+      <path d="M5 99c-13 5-10 22 11 21 24-1 47-29 77-25l-2 14c-28-5-49 21-74 24-27 3-39-22-17-35Z"/>
+    </g>
+    <path id="a" fill-rule="evenodd" d="m8 106 40-28 9-14 7 19 13 8-5 57 1 43 13 10-29 13-5-16-22 17-25-18 3-37 39-25 2-32-18 4-7 19-16 4Zm40 47-18 13-2 27 20-11Z"/>
+    <path id="r" d="m2 94 27-20 5 14 19-19 17 17-15 21-13-9-13 17-3 39v39l14 12-38 14 6-23 3-92Z"/>
+    <path id="s" d="m63 76-2 38-17-15-17 8-3 13 39 28 5 35-29 30-36-11 4-33 18 20 16-6 2-13-38-30 2-29 29-31 13 1Z"/>
+    <path id="h" d="m3 25 33-14-7 42-1 49 24-19 8-12 7 14 10 6-5 52 1 50 11 8-35 13 7-21 1-40v-44l-12-1-16 16-3 33 1 39 9 7-36 14 8-21 5-162Z"/>
+    <path id="i" d="m4 103 29-12-6 57 1 48 10 9-38 11 8-22 3-81ZM5 61l19-14 13 19-20 14Z"/>
+    <path id="t" d="m12 51 29-17-4 62 28-10-7 13 5 5-27 8-4 44 1 34 22-8-7 21-28 13-11-15 5-82-14 6 7-13-5-7 13-4Z"/>
+    <path id="cap-m" d="m0 20 46-12 31 128L104 6l41-6-10 17-7 97 2 87 15 10-45 8 9-20 5-150-35 135-14 6-31-119-4 72-1 51 14 9-20 19h7L6 258l11-37-14 6 12-24 5-167Z"/>
+    <path id="u" d="m0 98 31-15-5 54v50l16 1 15-18 2-73-9-4 36-14-7 65 1 50 11 10-32 11-4-19-24 21-27-14 5-90Z"/>
+    <path id="l" d="m7 26 35-15-8 101 1 81 12 9-38 16 4-22 8-160Z"/>
+    <g id="letters">
+      <use href="#cap-h" transform="translate(15 5)"/>
+      <use href="#a" transform="translate(132 8) rotate(-2 42 150)"/>
+      <use href="#r" transform="translate(222 5) rotate(2 30 150)"/>
+      <use href="#s" transform="translate(296 7) rotate(-2 34 150)"/>
+      <use href="#h" transform="translate(370 5) rotate(1 35 140)"/>
+      <use href="#i" transform="translate(458 4) rotate(-3 19 150)"/>
+      <use href="#t" transform="translate(501 3) rotate(2 30 140)"/>
+      <use href="#cap-m" transform="translate(620 7)"/>
+      <use href="#u" transform="translate(771 9) rotate(-2 42 150)"/>
+      <use href="#h" transform="translate(869 5) rotate(1 35 140)"/>
+      <use href="#a" transform="translate(958 7) rotate(-1 42 150)"/>
+      <use href="#l" transform="translate(1051 5) rotate(2 25 140)"/>
+    </g>
+    <clipPath id="letter-faces"><use href="#letters"/></clipPath>
+  </defs>
+  <use href="#letters" transform="translate(3 3)" fill="#211b14" filter="url(#fine-cut)"/>
+  <use href="#letters" transform="translate(1.7 1.5)" fill="url(#metal-side)" filter="url(#fine-cut)"/>
+  <use href="#letters" fill="url(#gold)" filter="url(#carved-metal)"/>
+  <g clip-path="url(#letter-faces)" fill="none" stroke-linejoin="miter">
+    <path d="m39 36-1 68 2 92m60-170-4 81 2 92m89-90-4 76m64-79-3 87m85-75 24 40m40-124-2 60 2 88m45-74-1 73m38-83-3 81m53-80-2 79m103-161-3 89-3 80m95-165-8 93 1 79m73-83-3 76m76-149-2 60 2 88m47-74-1 73m85-82-4 76m43-152-5 88 1 79" stroke="#fff0c1" stroke-opacity=".55" stroke-width="1"/>
+    <path d="m48 28-3 72 3 101m59-181-6 85 3 98m88-97-4 78m66-81-4 89m146-153-3 62 2 92m283-166-5 89-3 82m97-170-8 98 2 79" stroke="#2c2114" stroke-opacity=".8" stroke-width="2"/>
+  </g>
+</svg>

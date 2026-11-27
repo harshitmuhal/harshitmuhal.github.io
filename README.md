@@ -44,6 +44,7 @@ Notes page: [https://harshitmuhal.github.io/notes/](https://harshitmuhal.github.
 - **Particles**: Legacy Particles.js support is retained but disabled in the castle theme
 - **Icons**: Font Awesome 6
 - **Fonts**: Inter and Cormorant Garamond (Google Fonts), with local fallback fonts
+- **Homepage name**: An original single-line SVG wordmark with mixed-case lettering, pinched stems, pointed crowns, an irregular baseline, and lightning details. Bevel lighting and bronze edge facets give it a carved-metal finish (`assets/images/name-wordmark.svg`). Its accessible alternative text is "Harshit Muhal"; no display-font download or franchise-logo asset is used. Other headings and the notes workspace keep their existing fonts. The main page also uses an original HM SVG favicon.
 - **Deployment**: GitHub Pages
 - **Notes editor**: Quill 2, with rich text stored as text operations rather than executable HTML
 - **Authentication and notes database**: Supabase Auth and Postgres with row-level security

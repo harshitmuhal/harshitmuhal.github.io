@@ -1117,20 +1117,20 @@ body {
   color: #a99a7c;
 }
 .hero .name {
-  font-size: clamp(5rem, min(10.5vw, 14svh), 10.3rem);
-  font-weight: 400;
-  line-height: 0.78;
-  letter-spacing: -0.04em;
-  text-shadow: 0 5px 35px #0006;
-}
-.hero .name > span,
-.hero .name em {
   display: block;
+  width: min(100%, 37rem);
+  line-height: 1;
+  background: none;
+  text-shadow: none;
 }
-.hero .name em {
-  font-weight: 400;
-  color: #d4bd8b;
-  margin-left: 0.28em;
+.hero .name-wrapper {
+  display: block;
+  width: 100%;
+}
+.name-wordmark {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .hero .name-underline {
   display: none;
@@ -2171,12 +2171,6 @@ section.experience {
   .hero .greeting {
     font-size: 0.48rem;
   }
-  .hero .name {
-    font-size: clamp(6.7rem, 21vw, 9rem);
-  }
-  .hero .name em {
-    margin-left: 0.13em;
-  }
   .hero-manifesto {
     font-size: 1.5rem;
     margin-top: 1.2rem;
@@ -2333,9 +2327,6 @@ section.experience {
   .hero .greeting {
     margin-bottom: 0.7rem;
   }
-  .hero .name {
-    font-size: clamp(3.8rem, min(10.5vw, 12svh), 6.8rem);
-  }
   .hero .hero-title {
     margin-bottom: 0.75rem;
   }
@@ -2360,9 +2351,6 @@ section.experience {
 @media (max-width: 768px) and (max-height: 900px) {
   .hero {
     padding-top: 96px;
-  }
-  .hero .name {
-    font-size: clamp(3.7rem, min(23vw, 11.5svh), 7rem);
   }
   .hero .hero-badge {
     margin-bottom: 0.9rem;
