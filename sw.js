@@ -1,4 +1,4 @@
-const CACHE_NAME = 'harshit-portfolio-v43';
+const CACHE_NAME = 'harshit-portfolio-v44';
 const urlsToCache = [
   '/',
   '/index.html',

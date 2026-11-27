@@ -1765,6 +1765,40 @@ body {
   text-align: left;
   font-size: 0.65rem;
 }
+.achievement-stats {
+  grid-auto-rows: 1fr;
+}
+.achievement-stat .stat-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.45rem;
+  min-width: 0;
+  text-align: left;
+}
+.achievement-stat .stat-number {
+  margin: 0;
+  line-height: 1.15;
+}
+.achievement-stat .stat-label {
+  text-align: left;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.achievement-stats .achievement-stat {
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+.achievement-stat .stat-icon {
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .achievement-stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .experience > .container {
   display: grid;
   grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
