@@ -6,7 +6,7 @@ The `/notes/` page uses inline SVG icons, a text Google sign-in mark, and the Qu
 
 `favicon.svg` is the main portfolio's original dark-and-gold HM browser-tab monogram with a small lightning accent. It uses vector paths rather than a font or a franchise logo.
 
-`name-wordmark.svg` contains original mixed-case lettering for the homepage name, with pinched stems, pointed letter crowns, a sweeping H crossbar, and a long lightning-shaped M downstroke. Static SVG lighting, edge facets, and offset bronze sides create a carved-metal finish instead of flat gold. The initials remain H/M, not H/P. It replaces the experimental fan-font and block-capital treatments and has the accessible alternative text "Harshit Muhal" in `index.html`.
+The homepage name is rendered as actual text in Cormorant Garamond, not an image. The experimental `name-wordmark.svg` has been removed; no font-logo asset is needed for the name.
 
 ## Optional Images
 

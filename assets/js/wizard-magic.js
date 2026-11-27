@@ -103,6 +103,8 @@
   });
   const chaseDuration = 22000;
   const chaseLead = 950;
+  const chaseStage = document.querySelector(".hero-chase");
+  let homeVisible = true;
   const chaseSprites = [
     document.querySelector(".snitch-flight"),
     document.querySelector(".wizard-flight"),
@@ -127,8 +129,8 @@
 
   function flightFrames(sprite) {
     const frames = [];
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const width = chaseStage.clientWidth;
+    const height = chaseStage.clientHeight;
     const box = sprite.getBoundingClientRect();
     let previousPose;
     chaseRoute.forEach(([x, y], index) => {
@@ -182,6 +184,8 @@
   }
 
   function syncChase(paused) {
+    paused = paused || !homeVisible;
+    chaseStage.classList.toggle("chase-sleeping", paused);
     if (!chaseAnimations.length) buildChase();
     chaseAnimations.forEach((animation) =>
       paused ? animation.pause() : animation.play()
@@ -225,6 +229,11 @@
 
   document.addEventListener("visibilitychange", updateMotion);
   updateMotion();
+  const homeVisibility = new IntersectionObserver(([entry]) => {
+    homeVisible = entry.isIntersecting;
+    syncChase(document.hidden);
+  });
+  homeVisibility.observe(document.getElementById("home"));
 
   document.addEventListener(
     "pointermove",
@@ -293,6 +302,59 @@
     document.getElementById("contact").classList.add("letter-ready");
     document.querySelector('#contactForm [name="name"]').focus();
   });
+
+  const howlerStage = document.querySelector(".howler-stage");
+  const howlerEnvelope = howlerStage.querySelector(".howler-envelope");
+  let howlerTimer;
+  function sizeHowlerCover() {
+    howlerStage.style.setProperty(
+      "--howler-width",
+      `${howlerEnvelope.offsetWidth}px`
+    );
+    howlerStage.style.setProperty(
+      "--howler-height",
+      `${howlerEnvelope.offsetHeight}px`
+    );
+    howlerStage.style.setProperty(
+      "--howler-top",
+      `${howlerEnvelope.offsetTop}px`
+    );
+    howlerStage.style.setProperty(
+      "--howler-left",
+      `${howlerEnvelope.offsetLeft}px`
+    );
+  }
+  sizeHowlerCover();
+  const howlerSize = new ResizeObserver(sizeHowlerCover);
+  howlerSize.observe(howlerEnvelope);
+  howlerSize.observe(howlerStage);
+  function openHowler() {
+    if (howlerStage.dataset.state !== "sealed") return;
+    clearTimeout(howlerTimer);
+    howlerStage.dataset.state = "opening";
+    howlerStage.classList.add("howler-opening");
+    howlerVisibility.disconnect();
+  }
+  const howlerVisibility = new IntersectionObserver(
+    ([entry]) => {
+      clearTimeout(howlerTimer);
+      if (entry.isIntersecting) howlerTimer = setTimeout(openHowler, 380);
+    },
+    { threshold: 0, rootMargin: "0px 0px -15% 0px" }
+  );
+  howlerEnvelope.addEventListener("animationend", (event) => {
+    if (
+      event.target !== howlerEnvelope ||
+      event.animationName !== "howler-reveal"
+    )
+      return;
+    howlerStage.dataset.state = "open";
+    howlerStage.classList.add("howler-open");
+    howlerStage.classList.remove("howler-opening");
+  });
+  howlerStage.classList.add("howler-ready");
+  howlerStage.dataset.state = "sealed";
+  howlerVisibility.observe(howlerStage.querySelector(".howler-cover-flap"));
 
   const chapters = new IntersectionObserver(
     (entries) => {

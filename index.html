@@ -11,12 +11,11 @@
     <noscript><style>[data-aos] { opacity: 1 !important; transform: none !important; }</style></noscript>
     
     <link rel="icon" type="image/svg+xml" href="./assets/images/favicon.svg">
-    <link rel="preload" href="./assets/images/name-wordmark.svg" as="image" type="image/svg+xml">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -213,46 +212,48 @@
     <div id="particles-js"></div>
 
     <div class="enchanted-sky" aria-hidden="true">
-        <div class="snitch-flight">
-            <svg viewBox="0 0 160 75" focusable="false">
-                <defs><radialGradient id="chase-gold" cx=".35" cy=".3"><stop stop-color="#fff5bd"/><stop offset=".5" stop-color="#dfb64e"/><stop offset="1" stop-color="#77511d"/></radialGradient></defs>
-                <g class="chase-wing chase-wing-left" fill="#eee3bb" stroke="#b59d65" stroke-width=".7">
-                    <path d="M67 37C47 9 22 17 2 4c9 20 24 24 35 28-15-2-22-3-31 0 20 14 39 15 61 12Z"/>
-                    <path d="m16 17 46 21M20 34l43 7" fill="none"/>
-                </g>
-                <g class="chase-wing chase-wing-right" fill="#eee3bb" stroke="#b59d65" stroke-width=".7">
-                    <path d="M93 37c20-28 45-20 65-33-9 20-24 24-35 28 15-2 22-3 31 0-20 14-39 15-61 12Z"/>
-                    <path d="m144 17-46 21m42-4-43 7" fill="none"/>
-                </g>
-                <circle cx="80" cy="40" r="16" fill="url(#chase-gold)" stroke="#f5d992"/>
-                <ellipse cx="80" cy="40" rx="8" ry="15" fill="none" stroke="#916628"/>
-                <path d="M65 38h30m-25 9 10-17 10 17" fill="none" stroke="#916628"/>
-            </svg>
-        </div>
-        <div class="wizard-flight">
-            <svg viewBox="0 0 260 140" focusable="false">
-                <g class="broom-sparks" fill="#f2d794">
-                    <circle cx="10" cy="103" r="2"/><circle cx="25" cy="87" r="1.5"/><circle cx="4" cy="78" r="1"/>
-                    <path d="m35 100-30 6m37-15L8 92m32 4L0 99" stroke="#e9b55d" stroke-width="2"/>
-                </g>
-                <g class="flying-wizard">
-                    <path d="m40 97 175-15" stroke="#a87840" stroke-width="5" stroke-linecap="round"/>
-                    <path d="m57 91-25-3-7 22 32-9m-18-9-8 13m17-12-10 12" fill="#b78c4d" stroke="#6e492d" stroke-width="2"/>
-                    <path class="wizard-cloak" d="M130 57c-22-9-34 2-48 18L47 77l42 19 43-12 16-14Z" fill="#742f36" stroke="#e7b866" stroke-width="1"/>
-                    <path d="m128 77 19 15-8 25h13l9-29-17-15" fill="#18242d" stroke="#e7b866" stroke-width="1"/>
-                    <path class="wizard-arm" d="m136 59 19 14 22-13" fill="none" stroke="#d5b17d" stroke-width="7" stroke-linecap="round"/>
-                    <circle cx="139" cy="45" r="11" fill="#deb989"/>
-                    <path d="m116 39 36-4-16-30-8 22Z" fill="#192b3a" stroke="#d6b267" stroke-width="1.5"/>
-                    <path d="m172 61 19-17" stroke="#d9bf85" stroke-width="2"/>
-                    <path d="m193 32 2 9 9 3-9 2-2 9-2-9-9-2 9-3Z" fill="#fff1b1"/>
-                </g>
-            </svg>
-        </div>
         <div id="spell-trail"></div>
     </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-chase" aria-hidden="true">
+            <div class="snitch-flight">
+                <svg viewBox="0 0 160 75" focusable="false">
+                    <defs><radialGradient id="chase-gold" cx=".35" cy=".3"><stop stop-color="#fff5bd"/><stop offset=".5" stop-color="#dfb64e"/><stop offset="1" stop-color="#77511d"/></radialGradient></defs>
+                    <g class="chase-wing chase-wing-left" fill="#eee3bb" stroke="#b59d65" stroke-width=".7">
+                        <path d="M67 37C47 9 22 17 2 4c9 20 24 24 35 28-15-2-22-3-31 0 20 14 39 15 61 12Z"/>
+                        <path d="m16 17 46 21M20 34l43 7" fill="none"/>
+                    </g>
+                    <g class="chase-wing chase-wing-right" fill="#eee3bb" stroke="#b59d65" stroke-width=".7">
+                        <path d="M93 37c20-28 45-20 65-33-9 20-24 24-35 28 15-2 22-3 31 0-20 14-39 15-61 12Z"/>
+                        <path d="m144 17-46 21m42-4-43 7" fill="none"/>
+                    </g>
+                    <circle cx="80" cy="40" r="16" fill="url(#chase-gold)" stroke="#f5d992"/>
+                    <ellipse cx="80" cy="40" rx="8" ry="15" fill="none" stroke="#916628"/>
+                    <path d="M65 38h30m-25 9 10-17 10 17" fill="none" stroke="#916628"/>
+                </svg>
+            </div>
+            <div class="wizard-flight">
+                <svg viewBox="0 0 260 140" focusable="false">
+                    <g class="broom-sparks" fill="#f2d794">
+                        <circle cx="10" cy="103" r="2"/><circle cx="25" cy="87" r="1.5"/><circle cx="4" cy="78" r="1"/>
+                        <path d="m35 100-30 6m37-15L8 92m32 4L0 99" stroke="#e9b55d" stroke-width="2"/>
+                    </g>
+                    <g class="flying-wizard">
+                        <path d="m40 97 175-15" stroke="#a87840" stroke-width="5" stroke-linecap="round"/>
+                        <path d="m57 91-25-3-7 22 32-9m-18-9-8 13m17-12-10 12" fill="#b78c4d" stroke="#6e492d" stroke-width="2"/>
+                        <path class="wizard-cloak" d="M130 57c-22-9-34 2-48 18L47 77l42 19 43-12 16-14Z" fill="#742f36" stroke="#e7b866" stroke-width="1"/>
+                        <path d="m128 77 19 15-8 25h13l9-29-17-15" fill="#18242d" stroke="#e7b866" stroke-width="1"/>
+                        <path class="wizard-arm" d="m136 59 19 14 22-13" fill="none" stroke="#d5b17d" stroke-width="7" stroke-linecap="round"/>
+                        <circle cx="139" cy="45" r="11" fill="#deb989"/>
+                        <path d="m116 39 36-4-16-30-8 22Z" fill="#192b3a" stroke="#d6b267" stroke-width="1.5"/>
+                        <path d="m172 61 19-17" stroke="#d9bf85" stroke-width="2"/>
+                        <path d="m193 32 2 9 9 3-9 2-2 9-2-9-9-2 9-3Z" fill="#fff1b1"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
         <div class="hero-background">
             <div class="hero-shapes">
                 <div class="shape shape-1"></div>
@@ -272,9 +273,8 @@
                 
                 <div class="hero-main">
                     <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
-                        <span class="greeting">ENGINEERING / IMAGINATION / IMPACT</span>
                         <span class="name-wrapper">
-                            <span class="name"><img class="name-wordmark" src="./assets/images/name-wordmark.svg" alt="Harshit Muhal" width="1110" height="270"></span>
+                            <span class="name">Harshit <em>Muhal</em></span>
                             <div class="name-underline"></div>
                         </span>
                     </h1>
@@ -288,15 +288,25 @@
                         </span>
                     </div>
                     
-                    <p class="hero-description" data-aos="fade-up" data-aos-delay="800">
+                    <p class="hero-credentials" data-aos="fade-up" data-aos-delay="800">
                         <span class="highlight-text">Expert @Codeforces</span> • <span class="highlight-text">DTU'22 Graduate</span>
-                        <br>Passionate about building <span class="gradient-text">scalable cloud solutions</span> 
-                        and <span class="gradient-text">AI-powered applications</span>
                     </p>
-                    
+                    <p class="hero-description">Building scalable cloud solutions and AI-powered applications.</p>
+                </div>
+
+                <div class="wizard-scene" aria-hidden="true">
+                    <img class="cinema-castle" src="./assets/images/midnight-castle.svg" alt="" width="1600" height="1100" fetchpriority="high">
+                    <div class="floating-candles">
+                        <span class="floating-candle"></span><span class="floating-candle"></span><span class="floating-candle"></span>
+                        <span class="floating-candle"></span><span class="floating-candle"></span><span class="floating-candle"></span>
+                        <span class="floating-candle"></span><span class="floating-candle"></span><span class="floating-candle"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-footer">
                     <div class="hero-stats" data-aos="fade-up" data-aos-delay="1000">
                         <div class="stat-item">
-                            <div class="stat-number">3+</div>
+                            <div class="stat-number">4+</div>
                             <div class="stat-label">Years at Microsoft</div>
                         </div>
                         <div class="stat-divider"></div>
@@ -311,78 +321,22 @@
                         </div>
                     </div>
                     
-                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="1200">
-                        <a href="#contact" class="btn btn-primary btn-glow">
-                            <span class="btn-content">
-                                <span>Let's make something matter</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </span>
-                            <div class="btn-shine"></div>
-                        </a>
-                        <a href="assets/resume.pdf" class="btn btn-secondary btn-glass" download>
-                            <span class="btn-content">
-                                <i class="fas fa-download"></i>
-                                <span>Download CV</span>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="wizard-scene" aria-hidden="true">
-                    <img class="cinema-castle" src="./assets/images/midnight-castle.svg" alt="" width="1600" height="1100" fetchpriority="high">
-                    <div class="floating-candles">
-                        <span class="floating-candle"></span><span class="floating-candle"></span><span class="floating-candle"></span>
-                    </div>
-                </div>
-
-                <div class="hero-tech-showcase" data-aos="fade-up" data-aos-delay="1400">
-                    <div class="tech-grid">
-                        <div class="tech-card microsoft" data-aos="flip-left" data-aos-delay="1500">
-                            <div class="tech-icon">
-                                <i class="fab fa-microsoft"></i>
-                            </div>
-                            <span>Microsoft</span>
-                            <div class="tech-glow"></div>
-                        </div>
-                        <div class="tech-card python" data-aos="flip-left" data-aos-delay="1600">
-                            <div class="tech-icon">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <span>Python</span>
-                            <div class="tech-glow"></div>
-                        </div>
-                        <div class="tech-card javascript" data-aos="flip-left" data-aos-delay="1700">
-                            <div class="tech-icon">
-                                <i class="fab fa-js-square"></i>
-                            </div>
-                            <span>JavaScript</span>
-                            <div class="tech-glow"></div>
-                        </div>
-                        <div class="tech-card azure" data-aos="flip-left" data-aos-delay="1800">
-                            <div class="tech-icon">
-                                <i class="fas fa-cloud"></i>
-                            </div>
-                            <span>Azure</span>
-                            <div class="tech-glow"></div>
-                        </div>
-                        <div class="tech-card ai" data-aos="flip-left" data-aos-delay="1900">
-                            <div class="tech-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <span>AI/ML</span>
-                            <div class="tech-glow"></div>
-                        </div>
-                        <div class="tech-card github" data-aos="flip-left" data-aos-delay="2000">
-                            <div class="tech-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <span>GitHub</span>
-                            <div class="tech-glow"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary btn-glow">
+                    <span class="btn-content">
+                        <span>Let's make something matter</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </span>
+                    <div class="btn-shine"></div>
+                </a>
+                <a href="assets/resume.pdf" class="btn btn-secondary btn-glass" download>
+                    <span class="btn-content">
+                        <i class="fas fa-download"></i>
+                        <span>Download CV</span>
+                    </span>
+                </a>
             </div>
-            <a class="begin-journey" href="#about"><span>SCROLL TO BEGIN THE STORY</span><span aria-hidden="true">&darr;</span></a>
+            </div>
         </div>
     </section>
             </div>
@@ -450,7 +404,13 @@
                 <p class="section-subtitle">Behind the code, a relentless desire to understand how things work.</p>
             </div>
             
-            <div class="about-hero howler-envelope" data-aos="fade-up" data-aos-delay="200">
+            <div class="howler-stage">
+                <div class="howler-cover" aria-hidden="true">
+                    <span class="howler-cover-flap"></span>
+                    <span class="howler-cover-seal">HM</span>
+                    <span class="howler-cover-label">TO THE CURIOUS<br>A LETTER OF INTRODUCTION</span>
+                </div>
+            <div class="about-hero howler-envelope">
                 <div class="howler-jaw howler-upper" aria-hidden="true"><span class="howler-teeth"></span></div>
                 <span class="howler-wing howler-wing-left" aria-hidden="true"></span>
                 <span class="howler-wing howler-wing-right" aria-hidden="true"></span>
@@ -477,6 +437,7 @@
                 </div>
                 <div class="howler-jaw howler-lower" aria-hidden="true"><span class="howler-teeth"></span><span class="howler-tongue"></span></div>
                 <span class="howler-seal" aria-hidden="true">HM</span>
+            </div>
             </div>
 
             <div class="about-grid">
@@ -588,6 +549,77 @@
             <div class="section-header" data-aos="fade-up">
                 <h2 class="section-title">Built at scale.<br><em>Made to matter.</em></h2>
                 <p class="section-subtitle">Building scalable solutions that impact millions</p>
+                <div class="phoenix-scene" aria-hidden="true">
+                    <svg class="journey-phoenix" viewBox="0 0 420 340" focusable="false">
+                        <defs>
+                            <radialGradient id="phoenix-aura"><stop stop-color="#d27a3c" stop-opacity=".25"/><stop offset="1" stop-color="#d27a3c" stop-opacity="0"/></radialGradient>
+                            <linearGradient id="phoenix-feathers" x1="0" y1="1" x2=".8" y2="0"><stop stop-color="#612737"/><stop offset=".4" stop-color="#a13e37"/><stop offset=".72" stop-color="#d67b46"/><stop offset="1" stop-color="#f4cd83"/></linearGradient>
+                            <linearGradient id="phoenix-fire" x2="0" y2="1"><stop stop-color="#fbe3a1"/><stop offset=".35" stop-color="#e58b48"/><stop offset=".72" stop-color="#b54b3c"/><stop offset="1" stop-color="#6c2c3720"/></linearGradient>
+                            <linearGradient id="phoenix-body" x2="1" y2="1"><stop stop-color="#f6ce7b"/><stop offset=".35" stop-color="#b95637"/><stop offset="1" stop-color="#7c3036"/></linearGradient>
+                            <linearGradient id="phoenix-coverts" x2="0" y2="1"><stop stop-color="#dc9a56"/><stop offset="1" stop-color="#84303a"/></linearGradient>
+                        </defs>
+                        <ellipse class="phoenix-glow" cx="210" cy="150" rx="175" ry="146" fill="url(#phoenix-aura)"/>
+                        <g fill="none" stroke="#ba8c5660" stroke-width=".7">
+                            <path d="M93 204a140 140 0 0 1 11-172m211 172a140 140 0 0 0-11-172"/>
+                            <path d="m64 145 8 0m-4-4v8m271-42h8m-4-4v8M201 13v9"/>
+                        </g>
+                        <g class="phoenix-form">
+                        <g class="phoenix-tail" fill="url(#phoenix-fire)">
+                            <path d="M199 166c-18 44 13 72 0 107-8 23-15 38-29 61 38-20 47-50 42-76-6-30-22-52-1-86Z"/>
+                            <path d="M212 170c6 39 40 66 26 100-13 31-12 50-3 64-22-22-19-40-9-64 15-31-16-57-25-92Z"/>
+                            <path d="M195 174c-38 33-36 46-22 71 9 19-2 42-21 64 24-15 36-36 27-61-12-23-14-37 25-67Z"/>
+                            <path d="M220 174c13 29 57 42 55 74 16-35-27-56-39-79Z"/>
+                            <g fill="none" stroke="#f3c77a" stroke-width=".8" stroke-opacity=".65">
+                                <path d="M204 181c-13 32 19 68-1 110m11-108c9 37 39 51 24 83m-43-75c-25 23-30 38-18 62m58-69c13 23 38 32 41 50"/>
+                            </g>
+                            <path d="M199 201c-28 44 36 83-14 129m44-115c42 36-12 69 11 109" fill="none" stroke="#db9c5745" stroke-width="1"/>
+                        </g>
+                        <path class="phoenix-back-feathers" d="M153 129c25-19 44-15 58-6 20-11 43-7 69 7l3 34c-16 2-30 10-43 17-10 3-20 0-29-1-12 4-21 1-32-4-10-3-19-9-28-12Z" fill="#9a4037"/>
+                        <g class="phoenix-wing phoenix-wing-left" fill="url(#phoenix-feathers)" stroke="#ddab6870" stroke-width=".8">
+                            <path class="phoenix-shoulder" d="M218 113c-30-7-53 4-75 21l-3 20c18 16 43 28 72 23l16-28Z" fill="#a44a3a" stroke="none"/>
+                            <g class="phoenix-primary phoenix-primary-left">
+                                <path d="M172 124C113 100 62 68 35 24c6 45 42 82 101 109Z"/>
+                                <path d="M162 135C106 116 65 96 37 58c11 45 49 73 105 85Z"/>
+                                <path d="M160 144C109 133 75 121 47 93c16 38 51 60 101 61Z"/>
+                                <path d="M163 151c-48-2-76-7-103-27 19 29 55 43 99 37Z"/>
+                                <path d="M177 157c-38 4-65 6-88-4 25 20 57 23 88 11Z"/>
+                                <g fill="none" stroke="#f3c77a" stroke-opacity=".55" stroke-width=".7"><path d="M48 46c35 38 62 54 104 76M50 81c35 32 62 45 99 55m-85-26c27 25 54 35 88 37m-68-8c28 17 48 18 72 17"/></g>
+                            </g>
+                            <path d="M203 127c-26-23-53-31-83-37 14 19 31 34 58 44-17-2-32-7-46-14 10 19 26 30 47 34l24-11Z" fill="url(#phoenix-coverts)"/>
+                            <path d="m191 124-25-14 12 17-28-12 18 20-20-4 28 17" fill="none" stroke="#e9b46b" stroke-opacity=".55"/>
+                        </g>
+                        <g class="phoenix-wing phoenix-wing-right" fill="url(#phoenix-feathers)" stroke="#ddab6870" stroke-width=".8">
+                            <path class="phoenix-shoulder" d="M202 112c27-7 53 8 75 23l5 24c-21 17-44 26-72 18l-17-27Z" fill="#a44a3a" stroke="none"/>
+                            <g class="phoenix-primary phoenix-primary-right">
+                                <path d="M247 121c58-33 104-67 130-112-1 50-37 88-94 121Z"/>
+                                <path d="M257 132c57-26 98-50 128-89-6 47-45 80-103 99Z"/>
+                                <path d="M259 143c54-18 87-34 117-65-10 42-45 67-98 77Z"/>
+                                <path d="M255 154c49-7 78-15 106-39-14 34-48 54-94 52Z"/>
+                                <path d="M241 162c40 0 68-1 92-15-22 24-55 32-89 23Z"/>
+                                <g fill="none" stroke="#f3c77a" stroke-opacity=".55" stroke-width=".7"><path d="M363 35c-31 42-60 65-99 86m106-54c-33 34-60 51-97 66m87-30c-26 28-54 42-83 45m61-18c-24 18-43 24-65 28"/></g>
+                            </g>
+                            <path d="M221 126c26-25 48-40 77-51-10 23-26 43-49 57 16-5 29-11 40-20-6 21-22 35-41 41l-26-9Z" fill="url(#phoenix-coverts)"/>
+                            <path d="m234 124 22-18-8 20 26-17-14 25 18-8-27 21" fill="none" stroke="#e9b46b" stroke-opacity=".55"/>
+                        </g>
+                        <g class="phoenix-bird">
+                            <path d="M202 171c-25-18-24-45-4-61 14-12 22-18 17-36-3-11 0-20 8-24 13-7 25 3 23 14-1 10-11 13-14 25-4 20 12 37 2 59-6 13-16 20-32 23Z" fill="url(#phoenix-body)" stroke="#e8b56c" stroke-width=".8"/>
+                            <path d="M203 157c-9-22 5-33 14-48-2 23 8 36 0 49l-8 12Z" fill="#e6a558"/>
+                            <path d="M214 94c-6 20-22 29-19 45m25-34c-6 20-14 31-11 50m12-39c1 16 10 22 6 36" fill="none" stroke="#f5cb77" stroke-opacity=".6" stroke-width=".8"/>
+                            <path d="M219 55c-12-5-17-14-14-27 9 10 18 10 24 20-2-17 5-27 15-35-2 16-2 26-9 39 9-11 20-13 30-10-12 5-19 12-24 20Z" fill="url(#phoenix-fire)"/>
+                            <path d="M242 61c9 0 16 4 17 9l-8-2-7 5" fill="#e8c077"/>
+                            <path d="m203 166-4 9 6-2m9-7 4 9 5-2" fill="none" stroke="#d7ac68" stroke-width="1.5" stroke-linecap="round"/>
+                            <circle cx="236" cy="60" r="2" fill="#211e20"/><circle cx="236.5" cy="59.5" r=".7" fill="#fff2bd"/>
+                        </g>
+                        </g>
+                        <g class="phoenix-embers" fill="#f1c47b">
+                            <circle cx="105" cy="232" r="1.7"/><circle cx="307" cy="215" r="2"/>
+                            <circle cx="141" cy="277" r="1.4"/><circle cx="278" cy="287" r="1.5"/>
+                            <circle cx="72" cy="183" r="1.2"/><circle cx="340" cy="192" r="1.5"/>
+                            <circle cx="203" cy="215" r="1.2"/><circle cx="237" cy="263" r="1.4"/>
+                        </g>
+                    </svg>
+                    <span class="phoenix-caption">ALWAYS BUILDING. ALWAYS BECOMING.</span>
+                </div>
             </div>
             
             <div class="experience-container">

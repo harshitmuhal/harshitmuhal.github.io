@@ -1,4 +1,4 @@
-const CACHE_NAME = 'harshit-portfolio-v25';
+const CACHE_NAME = 'harshit-portfolio-v36';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -8,9 +8,8 @@ const urlsToCache = [
   '/assets/js/wizard-magic.js',
   '/assets/images/midnight-castle.svg',
   '/assets/images/favicon.svg',
-  '/assets/images/name-wordmark.svg',
   '/assets/js/script.js',
-  'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap',
+  'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
   'https://unpkg.com/aos@2.3.1/dist/aos.css',
   'https://unpkg.com/aos@2.3.1/dist/aos.js',
