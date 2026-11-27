@@ -5,11 +5,141 @@
   const owl = document.getElementById("owl-post");
   const trail = document.getElementById("spell-trail");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const systemMotion = document.getElementById("motion-system");
+  const motionStatus = document.getElementById("motion-status");
+  const motionKey = "hm-portfolio-motion";
+  let forceMotion = false;
+  try {
+    forceMotion = localStorage.getItem(motionKey) === "enabled";
+  } catch (error) {
+    console.warn("Animation preference could not be read.", error);
+    motionStatus.textContent =
+      "Browser storage is unavailable. Animation choices will apply only to this tab.";
+    motionStatus.hidden = false;
+  }
+
+  function motionReduced() {
+    return reducedMotion.matches && !forceMotion;
+  }
+
+  function rememberMotion() {
+    try {
+      if (forceMotion) localStorage.setItem(motionKey, "enabled");
+      else localStorage.removeItem(motionKey);
+      motionStatus.hidden = true;
+    } catch (error) {
+      console.warn("Animation preference could not be saved.", error);
+      motionStatus.textContent =
+        "Animation choice applies to this tab, but could not be saved in browser storage.";
+      motionStatus.hidden = false;
+    }
+  }
   let userPaused = false;
   let lastSpark = 0;
   let sparkIndex = 0;
   let chaseAnimations = [];
   let resizeTimer;
+  const scrollOwl = document.createElement("div");
+  scrollOwl.className = "scroll-hedwig";
+  scrollOwl.setAttribute("aria-hidden", "true");
+  scrollOwl.append(
+    document.getElementById("snowy-owl-art").content.cloneNode(true)
+  );
+  document.body.append(scrollOwl);
+  let owlFrame;
+  let landingTimer;
+  let lastScroll = window.scrollY;
+  let owlX = 24;
+
+  function owlEnabled() {
+    return !userPaused && !motionReduced() && !document.hidden;
+  }
+
+  function positionOwl(x, y) {
+    owlX = x;
+    scrollOwl.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+  }
+
+  function landOwl() {
+    if (!owlEnabled()) return;
+    const size = scrollOwl.getBoundingClientRect();
+    const box = toggle.getBoundingClientRect();
+    const x = Math.max(
+      8,
+      Math.min(
+        window.innerWidth - size.width - 8,
+        box.left + box.width / 2 - size.width / 2
+      )
+    );
+    const y = Math.max(
+      window.scrollY + 82,
+      window.scrollY + box.top - size.height * (132 / 140)
+    );
+    scrollOwl.dataset.perch = "magic-toggle";
+    const destination = `translate3d(${x}px, ${y}px, 0)`;
+    if (
+      scrollOwl.classList.contains("owl-flying") &&
+      scrollOwl.style.transform !== destination
+    ) {
+      scrollOwl.dataset.state = "landing";
+    } else {
+      scrollOwl.dataset.state = "perched";
+      scrollOwl.classList.remove("owl-flying");
+    }
+    positionOwl(x, y);
+  }
+
+  function syncScrollOwl() {
+    scrollOwl.hidden = !owlEnabled();
+    if (!owlEnabled()) {
+      clearTimeout(landingTimer);
+      cancelAnimationFrame(owlFrame);
+      owlFrame = null;
+      scrollOwl.classList.remove("owl-flying");
+    } else landOwl();
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!owlEnabled()) return;
+      clearTimeout(landingTimer);
+      if (!owlFrame)
+        owlFrame = requestAnimationFrame(() => {
+          owlFrame = null;
+          const direction = window.scrollY >= lastScroll ? 1 : -1;
+          lastScroll = window.scrollY;
+          scrollOwl.classList.add("owl-flying");
+          delete scrollOwl.dataset.perch;
+          const size = scrollOwl.getBoundingClientRect();
+          const x = Math.max(
+            8,
+            Math.min(window.innerWidth - size.width - 8, owlX)
+          );
+          scrollOwl.dataset.state = "flying";
+          positionOwl(
+            x,
+            window.scrollY + window.innerHeight * (direction > 0 ? 0.38 : 0.43)
+          );
+        });
+      landingTimer = setTimeout(landOwl, 320);
+    },
+    { passive: true }
+  );
+  scrollOwl.addEventListener("transitionend", (event) => {
+    if (
+      event.target === scrollOwl &&
+      event.propertyName === "transform" &&
+      scrollOwl.dataset.state === "landing"
+    ) {
+      scrollOwl.dataset.state = "perched";
+      scrollOwl.classList.remove("owl-flying");
+    }
+  });
+  window.addEventListener("resize", () => {
+    clearTimeout(landingTimer);
+    landingTimer = setTimeout(landOwl, 180);
+  });
   const chaseDuration = 22000;
   const chaseLead = 950;
   const chaseSprites = [
@@ -91,7 +221,7 @@
   }
 
   function syncChase(paused) {
-    if (reducedMotion.matches) {
+    if (motionReduced()) {
       chaseAnimations.forEach((animation) => animation.cancel());
       chaseAnimations = [];
       return;
@@ -106,7 +236,7 @@
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       if (window.AOS) window.AOS.refresh();
-      if (reducedMotion.matches) return;
+      if (motionReduced()) return;
       buildChase();
       syncChase(userPaused || document.hidden);
     }, 120);
@@ -127,12 +257,21 @@
   });
 
   function updateMotion() {
-    const paused = userPaused || reducedMotion.matches || document.hidden;
+    if (forceMotion) document.documentElement.dataset.motion = "on";
+    else delete document.documentElement.dataset.motion;
+    const paused = userPaused || motionReduced() || document.hidden;
     document.documentElement.classList.toggle("magic-paused", paused);
     toggle.setAttribute("aria-pressed", String(userPaused));
-    toggle.textContent = userPaused ? "Resume magic" : "Pause magic";
-    toggle.hidden = reducedMotion.matches;
+    toggle.textContent = motionReduced()
+      ? "Enable animations anyway"
+      : userPaused
+      ? "Resume magic"
+      : "Pause magic";
+    toggle.hidden = false;
+    systemMotion.hidden = !forceMotion;
     syncChase(paused);
+    syncScrollOwl();
+    document.dispatchEvent(new Event("portfolio-motion-change"));
     if (paused)
       sparks.forEach((spark) =>
         spark.getAnimations().forEach((animation) => animation.cancel())
@@ -140,7 +279,17 @@
   }
 
   toggle.addEventListener("click", () => {
-    userPaused = !userPaused;
+    if (motionReduced()) {
+      forceMotion = true;
+      userPaused = false;
+      rememberMotion();
+    } else userPaused = !userPaused;
+    updateMotion();
+  });
+  systemMotion.addEventListener("click", () => {
+    forceMotion = false;
+    userPaused = false;
+    rememberMotion();
     updateMotion();
   });
   reducedMotion.addEventListener("change", updateMotion);
@@ -152,7 +301,7 @@
     (event) => {
       if (
         event.pointerType !== "mouse" ||
-        reducedMotion.matches ||
+        motionReduced() ||
         userPaused ||
         document.hidden ||
         event.timeStamp - lastSpark < 65

@@ -337,16 +337,16 @@ section:not(.hero) > .container {
   content: "CHAPTER II / THE JOURNEY";
 }
 #projects .section-header::before {
-  content: "CHAPTER III / THE SPELLBOOK";
+  content: "CHAPTER VI / THE SPELLBOOK";
 }
 #skills .section-header::before {
-  content: "CHAPTER IV / THE TOOLKIT";
+  content: "CHAPTER III / THE TOOLKIT";
 }
 #publications .section-header::before {
-  content: "CHAPTER V / THE LIBRARY";
+  content: "CHAPTER IV / THE LIBRARY";
 }
 #achievements .section-header::before {
-  content: "CHAPTER VI / THE TROPHY ROOM";
+  content: "CHAPTER V / THE TROPHY ROOM";
 }
 #contact .section-header::before {
   content: "CHAPTER VII / OWL POST";
@@ -602,23 +602,23 @@ section:not(.hero) > .container {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  html:not([data-motion="on"]) {
     scroll-behavior: auto;
   }
-  *,
-  *::before,
-  *::after {
+  :root:not([data-motion="on"]) *,
+  :root:not([data-motion="on"]) *::before,
+  :root:not([data-motion="on"]) *::after {
     animation: none !important;
     transition: none !important;
   }
-  [data-aos] {
+  :root:not([data-motion="on"]) [data-aos] {
     opacity: 1 !important;
     transform: none !important;
   }
-  .name-underline {
+  :root:not([data-motion="on"]) .name-underline {
     width: 100%;
   }
-  .cursor {
+  :root:not([data-motion="on"]) .cursor {
     display: none;
   }
 }

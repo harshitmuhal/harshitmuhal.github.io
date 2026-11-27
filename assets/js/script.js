@@ -137,11 +137,8 @@ function initTypingEffect() {
         'Tech Innovation Leader'
     ];
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        if (typedTextElement) typedTextElement.textContent = texts[0];
-        return;
-    }
-    
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let typingTimer;
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -169,12 +166,25 @@ function initTypingEffect() {
             typingSpeed = 500;
         }
         
-        setTimeout(typeText, typingSpeed);
+        typingTimer = setTimeout(typeText, typingSpeed);
     }
-    
-    if (typedTextElement) {
-        typeText();
+
+    function syncTypingMotion() {
+        clearTimeout(typingTimer);
+        if (!typedTextElement) return;
+        const root = document.documentElement;
+        if (root.classList.contains('magic-paused') ||
+            (reducedMotion.matches && root.dataset.motion !== 'on')) {
+            typedTextElement.textContent = texts[0];
+            textIndex = 0;
+            charIndex = texts[0].length;
+            isDeleting = true;
+        } else {
+            typingTimer = setTimeout(typeText, 500);
+        }
     }
+    document.addEventListener('portfolio-motion-change', syncTypingMotion);
+    syncTypingMotion();
 }
 
 // ===== NAVIGATION =====
