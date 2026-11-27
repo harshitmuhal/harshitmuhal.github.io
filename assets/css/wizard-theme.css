@@ -600,25 +600,3 @@ section:not(.hero) > .container {
     flex-wrap: wrap;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  html:not([data-motion="on"]) {
-    scroll-behavior: auto;
-  }
-  :root:not([data-motion="on"]) *,
-  :root:not([data-motion="on"]) *::before,
-  :root:not([data-motion="on"]) *::after {
-    animation: none !important;
-    transition: none !important;
-  }
-  :root:not([data-motion="on"]) [data-aos] {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  :root:not([data-motion="on"]) .name-underline {
-    width: 100%;
-  }
-  :root:not([data-motion="on"]) .cursor {
-    display: none;
-  }
-}

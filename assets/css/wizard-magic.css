@@ -240,60 +240,6 @@
     38% 38%
   );
 }
-.magic-toggle {
-  position: fixed;
-  bottom: 18px;
-  left: 18px;
-  z-index: 1001;
-  padding: 9px 13px;
-  color: #f3e5c4;
-  background: #17252df2;
-  border: 1px solid #bda57580;
-  border-radius: 30px;
-  font: 500 11px "Inter", sans-serif;
-  cursor: pointer;
-  box-shadow: 0 3px 15px #0002;
-}
-.magic-toggle:hover {
-  background: #2b3c44;
-}
-.magic-toggle[hidden] {
-  display: none;
-}
-.motion-system {
-  position: fixed;
-  left: 110px;
-  bottom: 18px;
-  z-index: 1001;
-  border: 1px solid #bda57560;
-  background: #17252df2;
-  color: #f3e5c4;
-  font: 9px "Inter", sans-serif;
-  padding: 8px 10px;
-  cursor: pointer;
-}
-.motion-system[hidden],
-.motion-notice[hidden] {
-  display: none;
-}
-@media (max-width: 768px) {
-  .motion-system {
-    left: 104px;
-    bottom: 12px;
-  }
-}
-.motion-notice {
-  position: fixed;
-  bottom: 100px;
-  left: 18px;
-  max-width: min(280px, calc(100vw - 36px));
-  z-index: 1002;
-  padding: 10px;
-  background: #17252d;
-  color: #f3e5c4;
-  border: 1px solid #bda57560;
-  font-size: 11px;
-}
 .chamber-scene,
 .cup-scene {
   overflow: hidden;
@@ -332,9 +278,6 @@
 .chamber-open .chamber-aura,
 .chamber-open .chamber-runes {
   opacity: 1;
-}
-.magic-toggle:focus-visible {
-  outline-color: #ebcd91;
 }
 .tournament-cup {
   animation: cup-hover 4s ease-in-out infinite alternate;
@@ -1839,11 +1782,6 @@ section.experience {
 .footer-links a {
   font-size: 0.7rem;
 }
-.magic-toggle {
-  font-size: 9px;
-  border-radius: 0;
-  opacity: 0.8;
-}
 .back-to-top {
   border-radius: 0;
   width: 38px;
@@ -2107,12 +2045,6 @@ section.experience {
   }
   .floating-candle:nth-child(2) {
     right: 9%;
-  }
-  .magic-toggle {
-    bottom: 12px;
-    left: 12px;
-    right: auto;
-    padding: 8px 11px;
   }
   .back-to-top {
     right: 12px;
@@ -2386,22 +2318,5 @@ section.experience {
   }
   .begin-journey {
     margin-top: 1rem;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  :root:not([data-motion="on"]) .wizard-flight,
-  :root:not([data-motion="on"]) .snitch-flight,
-  :root:not([data-motion="on"]) .scroll-hedwig,
-  :root:not([data-motion="on"]) #spell-trail,
-  :root:not([data-motion="on"]) .reading-progress {
-    display: none;
-  }
-  :root:not([data-motion="on"]) .hero::before,
-  :root:not([data-motion="on"]) .hero::after,
-  :root:not([data-motion="on"]) .wizard-scene::before,
-  :root:not([data-motion="on"]) .wizard-scene *,
-  :root:not([data-motion="on"]) .magic-chapter * {
-    animation: none !important;
-    transition: none !important;
   }
 }

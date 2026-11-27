@@ -137,7 +137,6 @@ function initTypingEffect() {
         'Tech Innovation Leader'
     ];
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let typingTimer;
     let textIndex = 0;
     let charIndex = 0;
@@ -173,8 +172,7 @@ function initTypingEffect() {
         clearTimeout(typingTimer);
         if (!typedTextElement) return;
         const root = document.documentElement;
-        if (root.classList.contains('magic-paused') ||
-            (reducedMotion.matches && root.dataset.motion !== 'on')) {
+        if (root.classList.contains('magic-paused')) {
             typedTextElement.textContent = texts[0];
             textIndex = 0;
             charIndex = texts[0].length;

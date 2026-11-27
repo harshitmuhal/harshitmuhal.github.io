@@ -1,40 +1,8 @@
 (() => {
-  const toggle = document.getElementById("magic-toggle");
   const chamber = document.getElementById("chamber-enter");
   const snitch = document.getElementById("snitch-toggle");
   const owl = document.getElementById("owl-post");
   const trail = document.getElementById("spell-trail");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const systemMotion = document.getElementById("motion-system");
-  const motionStatus = document.getElementById("motion-status");
-  const motionKey = "hm-portfolio-motion";
-  let forceMotion = false;
-  try {
-    forceMotion = localStorage.getItem(motionKey) === "enabled";
-  } catch (error) {
-    console.warn("Animation preference could not be read.", error);
-    motionStatus.textContent =
-      "Browser storage is unavailable. Animation choices will apply only to this tab.";
-    motionStatus.hidden = false;
-  }
-
-  function motionReduced() {
-    return reducedMotion.matches && !forceMotion;
-  }
-
-  function rememberMotion() {
-    try {
-      if (forceMotion) localStorage.setItem(motionKey, "enabled");
-      else localStorage.removeItem(motionKey);
-      motionStatus.hidden = true;
-    } catch (error) {
-      console.warn("Animation preference could not be saved.", error);
-      motionStatus.textContent =
-        "Animation choice applies to this tab, but could not be saved in browser storage.";
-      motionStatus.hidden = false;
-    }
-  }
-  let userPaused = false;
   let lastSpark = 0;
   let sparkIndex = 0;
   let chaseAnimations = [];
@@ -52,7 +20,7 @@
   let owlX = 24;
 
   function owlEnabled() {
-    return !userPaused && !motionReduced() && !document.hidden;
+    return !document.hidden;
   }
 
   function positionOwl(x, y) {
@@ -63,19 +31,12 @@
   function landOwl() {
     if (!owlEnabled()) return;
     const size = scrollOwl.getBoundingClientRect();
-    const box = toggle.getBoundingClientRect();
-    const x = Math.max(
-      8,
-      Math.min(
-        window.innerWidth - size.width - 8,
-        box.left + box.width / 2 - size.width / 2
-      )
-    );
+    const x = Math.max(8, Math.min(window.innerWidth - size.width - 8, 24));
     const y = Math.max(
       window.scrollY + 82,
-      window.scrollY + box.top - size.height * (132 / 140)
+      window.scrollY + window.innerHeight - 4 - size.height * (132 / 140)
     );
-    scrollOwl.dataset.perch = "magic-toggle";
+    scrollOwl.dataset.perch = "screen-edge";
     const destination = `translate3d(${x}px, ${y}px, 0)`;
     if (
       scrollOwl.classList.contains("owl-flying") &&
@@ -221,11 +182,6 @@
   }
 
   function syncChase(paused) {
-    if (motionReduced()) {
-      chaseAnimations.forEach((animation) => animation.cancel());
-      chaseAnimations = [];
-      return;
-    }
     if (!chaseAnimations.length) buildChase();
     chaseAnimations.forEach((animation) =>
       paused ? animation.pause() : animation.play()
@@ -236,9 +192,8 @@
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       if (window.AOS) window.AOS.refresh();
-      if (motionReduced()) return;
       buildChase();
-      syncChase(userPaused || document.hidden);
+      syncChase(document.hidden);
     }, 120);
   });
   for (const [template, target] of [
@@ -257,18 +212,8 @@
   });
 
   function updateMotion() {
-    if (forceMotion) document.documentElement.dataset.motion = "on";
-    else delete document.documentElement.dataset.motion;
-    const paused = userPaused || motionReduced() || document.hidden;
+    const paused = document.hidden;
     document.documentElement.classList.toggle("magic-paused", paused);
-    toggle.setAttribute("aria-pressed", String(userPaused));
-    toggle.textContent = motionReduced()
-      ? "Enable animations anyway"
-      : userPaused
-      ? "Resume magic"
-      : "Pause magic";
-    toggle.hidden = false;
-    systemMotion.hidden = !forceMotion;
     syncChase(paused);
     syncScrollOwl();
     document.dispatchEvent(new Event("portfolio-motion-change"));
@@ -278,21 +223,6 @@
       );
   }
 
-  toggle.addEventListener("click", () => {
-    if (motionReduced()) {
-      forceMotion = true;
-      userPaused = false;
-      rememberMotion();
-    } else userPaused = !userPaused;
-    updateMotion();
-  });
-  systemMotion.addEventListener("click", () => {
-    forceMotion = false;
-    userPaused = false;
-    rememberMotion();
-    updateMotion();
-  });
-  reducedMotion.addEventListener("change", updateMotion);
   document.addEventListener("visibilitychange", updateMotion);
   updateMotion();
 
@@ -301,8 +231,6 @@
     (event) => {
       if (
         event.pointerType !== "mouse" ||
-        motionReduced() ||
-        userPaused ||
         document.hidden ||
         event.timeStamp - lastSpark < 65
       )
