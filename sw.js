@@ -1,7 +1,10 @@
-const CACHE_NAME = 'harshit-portfolio-v36';
+const CACHE_NAME = 'harshit-portfolio-v43';
 const urlsToCache = [
   '/',
   '/index.html',
+  '/art/',
+  '/art/index.html',
+  '/art/style.css',
   '/assets/css/style.css',
   '/assets/css/wizard-theme.css',
   '/assets/css/wizard-magic.css',

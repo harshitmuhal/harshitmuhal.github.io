@@ -2,6 +2,8 @@
 
 A static portfolio website showcasing the professional journey and achievements of Harshit Muhal, with a private, cross-device notes workspace at `/notes/`.
 
+The public [Art gallery](https://harshitmuhal.github.io/art/) at `/art/` displays paintings from a shared Google Drive folder. The main navigation and a **View my art** button beside **Download CV** link to it; there is no separate Art teaser section.
+
 ## 🌟 Features
 
 - **Cinematic wizarding-inspired design**: A panoramic original moonlit castle, monumental editorial typography, dark chapter scenes, parchment details, and antique gold; no borrowed franchise images or logos
@@ -37,6 +39,7 @@ Notes page: [https://harshitmuhal.github.io/notes/](https://harshitmuhal.github.
 - **Achievements**: Awards, publications, and competitive programming accomplishments
 - **Contact**: Contact form and social media links
 - **Notes**: Private notes and inline checklists, organized into folders
+- **Art studio**: A separate painting collection connected to a public Google Drive folder, without changing the portfolio's chapter order
 
 ## 🛠️ Technologies Used
 
@@ -69,6 +72,14 @@ Notes page: [https://harshitmuhal.github.io/notes/](https://harshitmuhal.github.
    - Enable GitHub Pages in repository settings
    - Select source as "Deploy from a branch" and choose "main"
    - Publish the root directory, including `notes/` and `.nojekyll`; see [DEPLOYMENT.md](DEPLOYMENT.md)
+
+## Art studio
+
+`/art/` embeds the Google Drive grid for the public folder `1zb3IL89Wx6IhjD_OZHTBvy6QEeVTK3r_`. It needs no API key, OAuth secret, backend, or build step. Upload, rename, or remove paintings in that folder, then reload the Art page to see the current collection. Keep the folder and intended artworks shared as **Anyone with the link / Viewer**; sharing only with the site owner does not grant visitors access.
+
+The Art page is a minimal, white gallery: a compact artist header, the collection title, and the tagline "Sometimes, I put the keyboard aside and pick up a paintbrush" lead directly to the paintings, without a decorative hero or palette illustration. The tagline uses larger, dark, medium-weight italic lettering for visibility. Google controls the embedded grid, filenames, and full-size previews. All visible folder items are listed, so keep this folder dedicated to artwork. Visitors can scroll within the collection and open paintings in Drive. A direct-folder link remains available when Google is blocked, embedding fails, or a browser restricts third-party content. JPG and PNG are recommended for broad compatibility; HEIC previews depend on Google's support. A fully custom masonry/lightbox gallery with live folder enumeration would require a separately configured Drive API integration.
+
+`art/index.html` contains the folder URL, embedded viewer, and accessible navigation; `art/style.css` styles the studio independently of the notes workspace. The Art page uses relative asset and navigation URLs, so its styling also works when opening `art/index.html` directly as a file. The homepage's Art links point to that same index file. No paintings are downloaded into this public repository. The folder contents are public and remain hosted by Google; third-party requests follow Google's policies. For a full-site local preview, start the existing HTTP server from the repository root and visit `http://localhost:8000/art/`; notes still require HTTP rather than file access.
 
 ## Notes workspace
 

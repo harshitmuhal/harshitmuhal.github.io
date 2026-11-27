@@ -111,6 +111,12 @@ Changes will be live within a few minutes.
 
 ## Troubleshooting
 
+### Art studio
+
+Deploy `art/index.html` and `art/style.css` with the rest of the site. `/art/` uses Google's embedded folder viewer and does not need API credentials. Keep the dedicated painting folder and its intended files publicly viewable (**Anyone with the link / Viewer**). Uploading or changing artwork in Drive does not require a repository deployment; reload the Art page to refresh the collection.
+
+The gallery is hosted by Google, not copied into the repository or service-worker cache. If the embedded viewer is unavailable because of sharing restrictions, third-party blocking, or Google's service, use the page's **Open collection in Google Drive** link. JPG/PNG are preferable to HEIC for predictable previews. A blank gallery is not a reason to publish unrelated private folders or disable account security.
+
 ### Common Issues:
 
 1. **Site not loading**: Wait 10-15 minutes after first deployment
